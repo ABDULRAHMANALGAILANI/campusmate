@@ -45,3 +45,76 @@ export function biometricErrorMessage(error, method = "fingerprint") {
 
   return text || "Something went wrong. Please sign in with your password.";
 }
+
+
+// Does this device have its own fingerprint reader / face
+// unlock (Windows Hello, Touch ID, Face ID, Android)?
+// false = e.g. a laptop without them; the person can still use
+// their phone by scanning a QR code.
+export async function deviceHasBiometrics() {
+  try {
+    if (!biometricSupported()) return false;
+    return await window.PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable();
+  } catch {
+    return false;
+  }
+}
+
+
+// ---------------------------------------------------------
+// Fingerprint and face are turned on separately. Which ones a
+// device has is kept in its name, e.g.
+//   "Android phone · Fingerprint & Face"
+// Devices set up before this change (no " · ") count as both.
+// ---------------------------------------------------------
+
+const SEPARATOR = " · ";
+
+export function deviceMethods(device) {
+  const name = device?.friendly_name || "";
+  const index = name.lastIndexOf(SEPARATOR);
+
+  if (index === -1) return { fingerprint: true, face: true };
+
+  const part = name.slice(index + SEPARATOR.length);
+  return {
+    fingerprint: /fingerprint/i.test(part),
+    face: /face/i.test(part),
+  };
+}
+
+export function deviceLabel(device) {
+  const name = device?.friendly_name || "Device";
+  const index = name.lastIndexOf(SEPARATOR);
+  return index === -1 ? name : name.slice(0, index);
+}
+
+export function nameWithMethods(label, methods) {
+  const parts = [
+    methods.fingerprint ? "Fingerprint" : "",
+    methods.face ? "Face" : "",
+  ].filter(Boolean);
+
+  return `${label}${SEPARATOR}${parts.join(" & ")}`.slice(0, 120);
+}
+
+
+// The passkey made on THIS device (so we know which one to change)
+const DEVICE_KEY = "campusmate-passkey-id";
+
+export function thisDevicePasskeyId() {
+  try {
+    return window.localStorage.getItem(DEVICE_KEY) || "";
+  } catch {
+    return "";
+  }
+}
+
+export function rememberThisDevice(id) {
+  try {
+    if (id) window.localStorage.setItem(DEVICE_KEY, id);
+    else window.localStorage.removeItem(DEVICE_KEY);
+  } catch {
+    // private mode: nothing to remember
+  }
+}

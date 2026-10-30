@@ -43,7 +43,7 @@ const GUIDES = {
       ["See your marks", "Open the class and go to Grades. Marks appear after your professor releases them. Your total so far uses the weights your professor set."],
       ["Take a quiz", "Open the class, go to Quizzes and press Start quiz. If there is a time limit, the timer starts straight away and your answers are handed in when the time runs out."],
       ["Ask a question", "Use the Q&A tab of the class, so everyone in the class gets the answer."],
-      ["Sign in with fingerprint or face", "Go to Settings and press Set up this device. Do this once on each phone or computer."],
+      ["Sign in with fingerprint or face", "Go to Settings and press Set up fingerprint or Set up face (you can turn on one or both). Do this once on each device. No fingerprint reader on your laptop? Set it up on your phone, then on the laptop click Fingerprint and choose Use a phone or tablet."],
       ["Daily email", "Each morning you get one email with anything new. Turn it off in Settings under Email notifications."],
       ["Where are my old classes?", "Classes from past semesters are archived. On My Class, tick Show past classes to see their marks and files."],
     ],

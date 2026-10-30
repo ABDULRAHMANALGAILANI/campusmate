@@ -25,6 +25,7 @@ import BlinkCheck
 import {
   biometricErrorMessage,
   biometricSupported,
+  deviceHasBiometrics,
 } from "../lib/biometric";
 
 import SignInFooter from "../components/SignInFooter";
@@ -78,6 +79,17 @@ function Login() {
     errorMessage,
     setErrorMessage,
   ] = useState("");
+
+  // false = no fingerprint reader / face unlock on this device
+  // (e.g. a laptop): show how to use a phone instead
+  const [
+    hasReader,
+    setHasReader,
+  ] = useState(true);
+
+  useEffect(() => {
+    deviceHasBiometrics().then(setHasReader);
+  }, []);
 
 
   // Already signed in? Skip the sign-in page and go straight
@@ -365,6 +377,13 @@ function Login() {
                       Face
                     </button>
                   </div>
+
+                  {!hasReader && (
+                    <p className="signin-biometric-hint">
+                      No fingerprint reader or face unlock on this computer? Click Fingerprint or Face
+                      and choose "Use a phone or tablet", then scan the QR code with your phone.
+                    </p>
+                  )}
                 </>
               )}
             </form>

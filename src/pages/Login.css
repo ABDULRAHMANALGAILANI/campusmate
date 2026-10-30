@@ -568,3 +568,10 @@
 
   font-size: 14px;
 }
+
+.signin-biometric-hint {
+  margin: 10px 0 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.5;
+}
