@@ -179,15 +179,18 @@ function Settings() {
 
           <div className="settings-grid">
 
-            <BiometricSettings />
+            {/* Two columns that stack on their own, so a short card
+                doesn't leave a gap next to a tall one */}
+            <div className="settings-column">
+              <BiometricSettings />
+              <InstallAppCard />
+              <YourDataCard />
+            </div>
 
+            <div className="settings-column">
             <LanguageCard />
 
-            <InstallAppCard />
-
             <EmailNotificationsCard />
-
-            <YourDataCard />
 
 
             <section className="settings-card">
@@ -281,6 +284,7 @@ function Settings() {
               </form>
 
             </section>
+            </div>
 
           </div>
 

@@ -447,15 +447,18 @@ function ProfessorSettings() {
             ================================================== */}
 
             {/* Fingerprint & face sign-in */}
-            <BiometricSettings />
+            {/* Two columns that stack on their own, so a short card
+                doesn't leave a gap next to a tall one */}
+            <div className="settings-column">
+              <BiometricSettings />
+              <InstallAppCard />
+              <YourDataCard />
+            </div>
 
+            <div className="settings-column">
             <LanguageCard />
 
-            <InstallAppCard />
-
             <EmailNotificationsCard />
-
-            <YourDataCard />
 
             <section className="professor-settings-card">
 
@@ -724,6 +727,7 @@ function ProfessorSettings() {
               </form>
 
             </section>
+            </div>
 
           </div>
 

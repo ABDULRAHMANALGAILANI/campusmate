@@ -1301,5 +1301,13 @@
 "Turn off fingerprint and face sign-in for this device?": "إيقاف تسجيل الدخول بالبصمة والوجه لهذا الجهاز؟",
 "You can still sign in without a password:": "لا يزال بإمكانك تسجيل الدخول دون كلمة مرور:",
 "Blink 2 times at the camera, then confirm with your face unlock.": "ارمش مرتين أمام الكاميرا، ثم أكّد بفتح القفل بالوجه.",
-"Touch your fingerprint reader when asked.": "المس قارئ البصمة عند الطلب."
+"Touch your fingerprint reader when asked.": "المس قارئ البصمة عند الطلب.",
+"Go to Settings and press Set up fingerprint or Set up face (you can turn on one or both). Do this once on each device. No fingerprint reader or face unlock on your laptop? You can still set up both: the laptop camera checks your face and you confirm on your phone with a QR code.": "اذهب إلى الإعدادات واضغط إعداد البصمة أو إعداد الوجه (يمكنك تفعيل واحد أو الاثنين). افعل ذلك مرة واحدة على كل جهاز. لا يوجد قارئ بصمة أو فتح بالوجه في حاسوبك؟ لا يزال بإمكانك إعداد الاثنين: كاميرا الحاسوب تتحقق من وجهك وتؤكد على هاتفك برمز QR.",
+"Have Windows Hello? Turn it on in Windows Settings → Accounts → Sign-in options, and this computer can confirm by itself.": "لديك Windows Hello؟ فعّله من إعدادات Windows ← الحسابات ← خيارات تسجيل الدخول، وسيتمكن هذا الحاسوب من التأكيد بنفسه.",
+"No fingerprint reader or face unlock on this computer? Click Fingerprint or Face, choose \"iPhone, iPad, or Android device\", then scan the QR code with your phone.": "لا يوجد قارئ بصمة أو فتح بالوجه في هذا الحاسوب؟ اضغط البصمة أو الوجه، واختر \"iPhone, iPad, or Android device\"، ثم امسح رمز QR بهاتفك.",
+"Turn on a screen lock with fingerprint or face in your phone's settings, then come back here.": "فعّل قفل الشاشة بالبصمة أو الوجه من إعدادات هاتفك، ثم عد إلى هنا.",
+"You can still set both up here: this computer's camera checks your face (blink 2 times), then you confirm on your phone by scanning a QR code. When Windows asks, choose \"iPhone, iPad, or Android device\". Keep Bluetooth on for both.": "لا يزال بإمكانك إعداد الاثنين هنا: كاميرا هذا الحاسوب تتحقق من وجهك (ارمش مرتين)، ثم تؤكد على هاتفك بمسح رمز QR. عندما يسأل Windows اختر \"iPhone, iPad, or Android device\". أبقِ البلوتوث مفعّلًا على الجهازين.",
+"Your phone already has CampusMate sign-in. You can use it on this computer now: on the sign-in page click Fingerprint or Face and choose \"iPhone, iPad, or Android device\".": "هاتفك مُعدّ بالفعل لتسجيل الدخول إلى CampusMate. يمكنك استخدامه على هذا الحاسوب الآن: في صفحة تسجيل الدخول اضغط البصمة أو الوجه واختر \"iPhone, iPad, or Android device\".",
+"Scan a QR code and confirm with your phone's fingerprint.": "امسح رمز QR وأكّد ببصمة هاتفك.",
+"Blink 2 times at this computer's camera, then confirm on your phone.": "ارمش مرتين أمام كاميرا هذا الحاسوب، ثم أكّد على هاتفك."
 }

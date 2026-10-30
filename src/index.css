@@ -67,3 +67,11 @@ textarea {
     overflow-wrap: anywhere;
   }
 }
+
+/* Settings pages: each column stacks its own cards */
+.settings-column {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  min-width: 0;
+}

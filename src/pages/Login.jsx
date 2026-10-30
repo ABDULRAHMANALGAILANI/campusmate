@@ -380,8 +380,8 @@ function Login() {
 
                   {!hasReader && (
                     <p className="signin-biometric-hint">
-                      No fingerprint reader or face unlock on this computer? Click Fingerprint or Face
-                      and choose "Use a phone or tablet", then scan the QR code with your phone.
+                      No fingerprint reader or face unlock on this computer? Click Fingerprint or Face,
+                      choose "iPhone, iPad, or Android device", then scan the QR code with your phone.
                     </p>
                   )}
                 </>

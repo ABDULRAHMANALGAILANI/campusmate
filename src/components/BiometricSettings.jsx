@@ -118,6 +118,14 @@ function BiometricSettings() {
   }, [supported, loadDevices]);
 
 
+  // A computer without fingerprint/face hardware: the webcam does the
+  // blink check and the person confirms on their phone (QR code).
+  const viaPhone =
+    hasReader === false && !isPhone();
+
+  const setupLabel =
+    viaPhone ? "This computer (confirm on phone)" : deviceName();
+
   const thisDevice =
     devices.find((device) => device.id === localId) || null;
 
@@ -153,9 +161,16 @@ function BiometricSettings() {
           // Set up earlier in this browser before the change (or the
           // saved id was cleared): use that passkey if there is one
           // obvious match.
-          const sameName = devices.filter((device) => deviceLabel(device) === deviceName());
+          const sameName = devices.filter((device) => deviceLabel(device) === setupLabel);
+          const alreadyThere = /already|exists|InvalidState/i.test(`${error.name} ${error.message}`);
 
-          if (/already|exists|InvalidState/i.test(`${error.name} ${error.message}`) && sameName.length === 1) {
+          if (alreadyThere && viaPhone && sameName.length !== 1) {
+            throw new Error(
+              "Your phone already has CampusMate sign-in. You can use it on this computer now: on the sign-in page click Fingerprint or Face and choose \"iPhone, iPad, or Android device\"."
+            );
+          }
+
+          if (alreadyThere && sameName.length === 1) {
             rememberThisDevice(sameName[0].id);
             setLocalId(sameName[0].id);
             await rename(sameName[0], { ...deviceMethods(sameName[0]), [kind]: true });
@@ -165,7 +180,7 @@ function BiometricSettings() {
         } else if (data?.id) {
           rememberThisDevice(data.id);
           setLocalId(data.id);
-          await rename({ id: data.id, friendly_name: deviceName() }, {
+          await rename({ id: data.id, friendly_name: setupLabel }, {
             fingerprint: kind === "fingerprint",
             face: kind === "face",
           });
@@ -313,26 +328,12 @@ function BiometricSettings() {
             {message && <p className="biometric-message" role="status">{message}</p>}
             {errorMessage && <p className="biometric-error" role="alert">{errorMessage}</p>}
 
-            {hasReader === false ? (
+            {hasReader === false && isPhone() ? (
               <div className="biometric-noreader">
                 <Laptop size={20} aria-hidden="true" />
                 <div>
-                  <strong>
-                    {isPhone()
-                      ? "This device has no fingerprint or face unlock turned on."
-                      : "This computer has no fingerprint reader or face unlock."}
-                  </strong>
-                  <p>You can still sign in without a password:</p>
-                  <ol>
-                    <li>Open CampusMate on your phone, go to Settings and set up fingerprint or face there.</li>
-                    <li>On this computer, click Fingerprint or Face on the sign-in page and choose "Use a phone or tablet". Scan the QR code with your phone and confirm.</li>
-                  </ol>
-                  {!isPhone() && (
-                    <p className="biometric-note">
-                      Have Windows Hello? Turn it on in Windows Settings → Accounts → Sign-in options, then
-                      come back here.
-                    </p>
-                  )}
+                  <strong>This device has no fingerprint or face unlock turned on.</strong>
+                  <p>Turn on a screen lock with fingerprint or face in your phone's settings, then come back here.</p>
                 </div>
               </div>
             ) : blinking ? (
@@ -349,10 +350,44 @@ function BiometricSettings() {
                 />
               </div>
             ) : (
-              <div className="biometric-options">
-                {renderOption("fingerprint", Fingerprint, "Fingerprint", "Touch your fingerprint reader when asked.")}
-                {renderOption("face", ScanFace, "Face", "Blink 2 times at the camera, then confirm with your face unlock.")}
-              </div>
+              <>
+                {viaPhone && (
+                  <div className="biometric-noreader">
+                    <Laptop size={20} aria-hidden="true" />
+                    <div>
+                      <strong>This computer has no fingerprint reader or face unlock.</strong>
+                      <p>
+                        You can still set both up here: this computer's camera checks your face (blink 2 times),
+                        then you confirm on your phone by scanning a QR code. When Windows asks, choose
+                        "iPhone, iPad, or Android device". Keep Bluetooth on for both.
+                      </p>
+                      <p className="biometric-note">
+                        Have Windows Hello? Turn it on in Windows Settings → Accounts → Sign-in options, and
+                        this computer can confirm by itself.
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                <div className="biometric-options">
+                  {renderOption(
+                    "fingerprint",
+                    Fingerprint,
+                    "Fingerprint",
+                    viaPhone
+                      ? "Scan a QR code and confirm with your phone's fingerprint."
+                      : "Touch your fingerprint reader when asked."
+                  )}
+                  {renderOption(
+                    "face",
+                    ScanFace,
+                    "Face",
+                    viaPhone
+                      ? "Blink 2 times at this computer's camera, then confirm on your phone."
+                      : "Blink 2 times at the camera, then confirm with your face unlock."
+                  )}
+                </div>
+              </>
             )}
 
             <p className="biometric-note">
