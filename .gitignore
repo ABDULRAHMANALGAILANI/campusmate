@@ -23,3 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# Never upload: your keys and your users' data
+supabase-backup
+supabase/.temp
+*.zip

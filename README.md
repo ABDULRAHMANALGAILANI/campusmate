@@ -1,6 +1,16 @@
 # CampusMate
 
-A campus companion web app for students and professors, built with React, Vite and Supabase.
+A campus companion web app for students, professors and school admins, built with React, Vite and Supabase.
+
+**Live site:** https://campusmate.abdulrahmaanaljailani.workers.dev
+
+## About this project
+
+CampusMate is my first full-stack web app. I built it with the help of AI (Claude) while studying
+Computer Science (Year 2) at Universiti Sains Malaysia (USM). Working on it taught me how a real web
+app fits together: React pages and routing, a PostgreSQL database with row-level security, sign-in
+and passkeys, server functions, scheduled emails, translations and deployment. I'm now learning these
+topics in depth in my degree.
 
 ## Features
 
@@ -79,6 +89,13 @@ Deploy as Edge Functions (Verify JWT off for both):
 | `npm run build`   | Build the production site into `dist/`    |
 | `npm run preview` | Preview the production build locally      |
 | `npm run lint`    | Check the code for problems               |
+
+## Deployment
+
+The live site runs on Cloudflare Workers (static assets, settings in `wrangler.jsonc`), connected to
+this GitHub repository: every push to `main` rebuilds and updates the site. Cloudflare needs the build
+variables `VITE_SUPABASE_URL`, `VITE_SUPABASE_PUBLISHABLE_KEY` and `NODE_VERSION=22`. Add the live
+address in Supabase under Authentication -> URL Configuration and Authentication -> Passkeys.
 
 ## Project structure
 
