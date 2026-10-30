@@ -1,0 +1,285 @@
+/* =========================================================
+   ASSIGNMENT FORM (create + edit)
+   ========================================================= */
+
+.af-form {
+  display: grid;
+  gap: 12px;
+
+  color: #334155;
+  font-size: 14px;
+}
+
+.af-form *,
+.af-form *::before,
+.af-form *::after {
+  box-sizing: border-box;
+}
+
+.af-error {
+  margin: 0;
+  padding: 10px 12px;
+
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+.af-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+  min-width: 0;
+}
+
+.af-field span,
+.af-label {
+  color: #15315c;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.af-field em,
+.af-label em {
+  color: #64748b;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.af-field input,
+.af-field textarea,
+.af-field select {
+  width: 100%;
+  min-height: 40px;
+  padding: 9px 11px;
+
+  border: 1px solid #cfd9e7;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #334155;
+
+  font: inherit;
+}
+
+.af-field textarea {
+  resize: vertical;
+}
+
+.af-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.af-row .af-field {
+  flex: 2 1 220px;
+}
+
+.af-row .af-field.small {
+  flex: 1 1 120px;
+}
+
+.af-type {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.af-type label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  padding: 11px 12px;
+
+  border: 1.5px solid #dbe3ee;
+  border-radius: 12px;
+  background: #ffffff;
+
+  cursor: pointer;
+}
+
+.af-type label.active {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+.af-type input {
+  margin-top: 3px;
+  accent-color: #2563eb;
+}
+
+.af-type strong {
+  display: block;
+  color: #15315c;
+}
+
+.af-type small {
+  color: #64748b;
+  font-size: 12.5px;
+}
+
+.af-file {
+  display: grid;
+  gap: 6px;
+}
+
+.af-current-file {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 10px;
+
+  border-radius: 10px;
+  background: #f1f5fb;
+  color: #15315c;
+}
+
+.af-current-file span {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.af-current-file button {
+  display: grid;
+  place-items: center;
+
+  width: 28px;
+  height: 28px;
+
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #b91c1c;
+
+  cursor: pointer;
+}
+
+.af-dropzone {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 14px;
+
+  border: 1.5px dashed #b8c7dc;
+  border-radius: 12px;
+  background: #f8fafd;
+  color: #475569;
+
+  cursor: pointer;
+}
+
+.af-dropzone small {
+  color: #64748b;
+}
+
+.af-dropzone input {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0;
+  cursor: pointer;
+}
+
+.af-dropzone:focus-within {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.af-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  cursor: pointer;
+}
+
+.af-check input {
+  width: 17px;
+  height: 17px;
+  margin-top: 2px;
+
+  accent-color: #2563eb;
+}
+
+.af-check span {
+  display: flex;
+  flex-direction: column;
+
+  color: #15315c;
+  font-weight: 600;
+}
+
+.af-check small {
+  color: #64748b;
+  font-weight: 400;
+}
+
+.af-hint {
+  margin: 0;
+
+  color: #64748b;
+  font-size: 13px;
+}
+
+.af-actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin-top: 4px;
+}
+
+.af-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  min-height: 40px;
+  padding: 0 16px;
+
+  border: 1px solid #cfd9e7;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #15315c;
+
+  font: inherit;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.af-button.primary {
+  border-color: #2563eb;
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.af-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.af-field input:focus-visible,
+.af-field textarea:focus-visible,
+.af-field select:focus-visible,
+.af-button:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+@media (max-width: 560px) {
+  .af-type {
+    grid-template-columns: 1fr;
+  }
+}

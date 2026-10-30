@@ -1,0 +1,877 @@
+/* =========================================================
+   CAMPUSMATE - PROFESSOR PROFILE
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.professor-profile-content {
+  width: 100%;
+
+  min-height:
+    calc(
+      100vh - 78px
+    );
+
+  padding:
+    32px 34px
+    50px;
+
+  background: #f5f8fc;
+
+  color: #173558;
+}
+
+
+.professor-profile-heading {
+  margin-bottom: 22px;
+}
+
+
+.professor-profile-heading h1 {
+  margin: 0;
+
+  color: #173558;
+
+  font-size: 32px;
+  font-weight: 800;
+
+  letter-spacing: -0.5px;
+}
+
+
+.professor-profile-heading p {
+  margin:
+    7px 0 0;
+
+  color: #8192a7;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   MESSAGES
+   ========================================================= */
+
+.professor-profile-success,
+.professor-profile-error {
+  margin-bottom: 18px;
+
+  padding:
+    13px 15px;
+
+  border-radius: 10px;
+
+  font-size: 12px;
+  font-weight: 650;
+}
+
+
+.professor-profile-success {
+  border:
+    1px solid #bbf7d0;
+
+  background: #f0fdf4;
+
+  color: #15803d;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+}
+
+
+.professor-profile-error {
+  border:
+    1px solid #fecaca;
+
+  background: #fff5f5;
+
+  color: #dc2626;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.professor-profile-hero {
+  min-height: 150px;
+
+  padding:
+    24px 28px;
+
+  border:
+    1px solid #dce6ef;
+
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+
+  gap: 24px;
+}
+
+
+.professor-profile-photo-area {
+  min-width: 130px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 8px;
+
+  flex-shrink: 0;
+}
+
+
+.professor-profile-large-avatar {
+  width: 88px;
+  height: 88px;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3279f1,
+      #1d4ed8
+    );
+
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    0 10px 26px
+    rgba(
+      37,
+      99,
+      235,
+      0.2
+    );
+
+  font-size: 29px;
+  font-weight: 800;
+}
+
+
+.professor-avatar {
+  overflow: hidden;
+}
+
+
+.professor-avatar-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: inherit;
+}
+
+
+/* =========================================================
+   PHOTO BUTTONS
+   ========================================================= */
+
+.professor-photo-buttons {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+}
+
+
+.professor-photo-upload,
+.professor-photo-remove {
+  min-height: 31px;
+
+  padding:
+    0 9px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  font-family: inherit;
+
+  font-size: 9px;
+  font-weight: 750;
+}
+
+
+.professor-photo-upload {
+  border:
+    1px solid #bfdbfe;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+}
+
+
+.professor-photo-upload:hover {
+  background: #dbeafe;
+}
+
+
+.professor-photo-remove {
+  border:
+    1px solid #fecaca;
+
+  background: #fff5f5;
+
+  color: #dc2626;
+}
+
+
+.professor-photo-remove:hover {
+  background: #fee2e2;
+}
+
+
+.professor-photo-upload:disabled,
+.professor-photo-remove:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+}
+
+
+.professor-photo-help {
+  color: #94a3b8;
+
+  font-size: 8px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   HERO INFORMATION
+   ========================================================= */
+
+.professor-profile-hero-info {
+  min-width: 0;
+}
+
+
+.professor-profile-hero-info h2 {
+  margin: 0;
+
+  color: #173558;
+
+  font-size: 25px;
+  font-weight: 800;
+}
+
+
+.professor-profile-hero-info p {
+  margin:
+    8px 0 11px;
+
+  color: #8192a7;
+
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  font-size: 12px;
+}
+
+
+.professor-account-badge {
+  min-height: 28px;
+
+  padding:
+    0 10px;
+
+  border-radius: 999px;
+
+  background: #eaf2ff;
+
+  color: #2563eb;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 5px;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.professor-profile-stats {
+  margin-top: 20px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap: 14px;
+}
+
+
+.professor-profile-stat-card {
+  min-height: 108px;
+
+  padding: 18px;
+
+  border:
+    1px solid #dce6ef;
+
+  border-radius: 13px;
+
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+}
+
+
+.professor-profile-stat-icon {
+  width: 48px;
+  height: 48px;
+
+  flex:
+    0 0
+    48px;
+
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.professor-profile-stat-icon.blue {
+  background: #dbeafe;
+
+  color: #2563eb;
+}
+
+
+.professor-profile-stat-icon.purple {
+  background: #ede9fe;
+
+  color: #7c3aed;
+}
+
+
+.professor-profile-stat-icon.green {
+  background: #dcfce7;
+
+  color: #16a34a;
+}
+
+
+.professor-profile-stat-card strong {
+  display: block;
+
+  color: #173558;
+
+  font-size: 22px;
+  font-weight: 800;
+}
+
+
+.professor-profile-stat-card span:not(
+  .professor-profile-stat-icon
+) {
+  margin-top: 4px;
+
+  display: block;
+
+  color: #8192a7;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.professor-profile-grid {
+  margin-top: 20px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(
+      0,
+      1fr
+    )
+    minmax(
+      0,
+      1fr
+    );
+
+  gap: 18px;
+
+  align-items: start;
+}
+
+
+.professor-profile-card {
+  min-width: 0;
+
+  padding: 22px;
+
+  border:
+    1px solid #dce6ef;
+
+  border-radius: 14px;
+
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   CARD HEADER
+   ========================================================= */
+
+.professor-profile-card-header {
+  margin-bottom: 20px;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 10px;
+}
+
+
+.professor-profile-card-header > svg {
+  margin-top: 2px;
+
+  color: #2563eb;
+
+  flex-shrink: 0;
+}
+
+
+.professor-profile-card-header h2 {
+  margin: 0;
+
+  color: #173558;
+
+  font-size: 16px;
+  font-weight: 800;
+}
+
+
+.professor-profile-card-header p {
+  margin:
+    4px 0 0;
+
+  color: #94a3b8;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.professor-profile-form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+
+.professor-profile-form > div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+
+.professor-profile-form label {
+  color: #52677f;
+
+  font-size: 10px;
+  font-weight: 750;
+}
+
+
+.professor-profile-input {
+  width: 100%;
+  height: 48px;
+
+  padding:
+    0 13px;
+
+  border:
+    1px solid #cfdceb;
+
+  border-radius: 9px;
+
+  background: #f8fafc;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+}
+
+
+.professor-profile-input svg {
+  color: #7890aa;
+
+  flex-shrink: 0;
+}
+
+
+.professor-profile-input input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #173558;
+
+  font-family: inherit;
+
+  font-size: 12px;
+}
+
+
+.professor-profile-input:focus-within {
+  border-color: #2563eb;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(
+      37,
+      99,
+      235,
+      0.07
+    );
+}
+
+
+.professor-profile-save {
+  width: fit-content;
+
+  min-height: 42px;
+
+  padding:
+    0 16px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  font-family: inherit;
+
+  font-size: 10px;
+  font-weight: 750;
+}
+
+
+.professor-profile-save:hover {
+  background: #1d4ed8;
+}
+
+
+.professor-profile-save:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   ACCOUNT INFO
+   ========================================================= */
+
+.professor-account-list {
+  overflow: hidden;
+
+  border:
+    1px solid #dce6ef;
+
+  border-radius: 11px;
+}
+
+
+.professor-account-list > div {
+  min-height: 66px;
+
+  padding:
+    15px 16px;
+
+  border-bottom:
+    1px solid #edf2f7;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+
+.professor-account-list > div:last-child {
+  border-bottom: none;
+}
+
+
+.professor-account-list span {
+  color: #8192a7;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  font-size: 10px;
+}
+
+
+.professor-account-list strong {
+  max-width: 58%;
+
+  color: #173558;
+
+  font-size: 10px;
+  font-weight: 750;
+
+  text-align: right;
+
+  overflow-wrap: anywhere;
+}
+
+
+.professor-role-pill {
+  padding:
+    5px 10px;
+
+  border-radius: 999px;
+
+  background: #eaf2ff;
+
+  color: #2563eb !important;
+}
+
+
+/* =========================================================
+   ROLE PROTECTED
+   ========================================================= */
+
+.professor-role-protected {
+  margin-top: 16px;
+
+  padding: 14px;
+
+  border-radius: 10px;
+
+  background: #eef5ff;
+
+  color: #2563eb;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 9px;
+}
+
+
+.professor-role-protected svg {
+  margin-top: 1px;
+
+  flex-shrink: 0;
+}
+
+
+.professor-role-protected strong {
+  color: #173558;
+
+  font-size: 10px;
+}
+
+
+.professor-role-protected p {
+  margin:
+    4px 0 0;
+
+  color: #8192a7;
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.professor-profile-loading {
+  min-height: 100vh;
+
+  background: #f5f8fc;
+
+  color: #2563eb;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (
+  max-width: 1050px
+) {
+
+  .professor-profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (
+  max-width: 760px
+) {
+
+  .professor-profile-content {
+    padding:
+      22px
+      16px
+      40px;
+  }
+
+
+  .professor-profile-heading h1 {
+    font-size: 27px;
+  }
+
+
+  .professor-profile-hero {
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+  }
+
+
+  .professor-profile-hero-info p {
+    justify-content: center;
+  }
+
+
+  .professor-profile-stats {
+    grid-template-columns: 1fr;
+  }
+
+
+  .professor-photo-buttons {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+
+  .professor-photo-upload,
+  .professor-photo-remove {
+    width: 100%;
+  }
+
+
+  .professor-photo-help {
+    white-space: normal;
+
+    text-align: center;
+  }
+
+
+  .professor-account-list > div {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 7px;
+  }
+
+
+  .professor-account-list strong {
+    max-width: 100%;
+
+    text-align: left;
+  }
+
+}

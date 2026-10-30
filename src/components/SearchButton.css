@@ -1,0 +1,27 @@
+.search-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 42px;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+  background: #f3f7fc;
+  color: #173558;
+
+  text-decoration: none;
+
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.search-button:hover {
+  background: #e7f0ff;
+  color: #2563eb;
+}
+
+.search-button:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}

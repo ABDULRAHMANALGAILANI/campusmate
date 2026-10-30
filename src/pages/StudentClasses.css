@@ -1,0 +1,1023 @@
+/* =========================================================
+   CAMPUSMATE
+   STUDENT CLASSES
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+
+.student-classes-page {
+  min-height: 100vh;
+
+  background: #f5f8fc;
+  color: #173558;
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.student-classes-main {
+  min-height: 100vh;
+
+  margin-left:
+    var(
+      --student-sidebar-width,
+      280px
+    );
+
+  width:
+    calc(
+      100% -
+      var(
+        --student-sidebar-width,
+        280px
+      )
+    );
+
+  background: #f5f8fc;
+
+  transition:
+    margin-left 0.25s ease,
+    width 0.25s ease;
+}
+
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.student-classes-topbar {
+  min-height: 78px;
+
+  padding: 0 34px;
+
+  border-bottom: 1px solid #e3eaf2;
+
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+
+.student-classes-search {
+  width: min(
+    580px,
+    55%
+  );
+
+  height: 46px;
+
+  padding: 0 14px;
+
+  border: 1px solid #d3dfeb;
+  border-radius: 10px;
+
+  background: #f9fbfd;
+  color: #8093aa;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+}
+
+
+.student-classes-search input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+  color: #173558;
+
+  font-family: inherit;
+  font-size: 12px;
+}
+
+
+.student-classes-search input::placeholder {
+  color: #9aaabd;
+}
+
+
+.student-classes-profile {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.student-classes-avatar {
+  width: 43px;
+  height: 43px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #4f46e5
+    );
+
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+
+.student-classes-profile > div:last-child {
+  min-width: 100px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+.student-classes-profile strong {
+  color: #173558;
+
+  font-size: 11px;
+}
+
+
+.student-classes-profile small {
+  margin-top: 2px;
+
+  color: #8b9bae;
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.student-classes-content {
+  width: 100%;
+
+  padding:
+    34px 38px
+    50px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.student-classes-header {
+  margin-bottom: 22px;
+}
+
+
+.student-classes-header h1 {
+  margin: 0;
+
+  color: #173558;
+
+  font-size: 31px;
+  font-weight: 850;
+
+  letter-spacing: -0.5px;
+}
+
+
+.student-classes-header p {
+  margin: 7px 0 0;
+
+  color: #8192a7;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   MESSAGES
+   ========================================================= */
+
+.student-class-success,
+.student-class-error {
+  margin-bottom: 17px;
+
+  padding: 13px 15px;
+
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  font-size: 10px;
+}
+
+
+.student-class-success {
+  border: 1px solid #bbf7d0;
+
+  background: #f0fdf4;
+  color: #15803d;
+
+  font-weight: 700;
+}
+
+
+.student-class-error {
+  border: 1px solid #fecaca;
+
+  background: #fff5f5;
+  color: #dc2626;
+}
+
+
+.student-class-error > div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.student-class-error strong {
+  font-size: 10px;
+}
+
+
+.student-class-error span {
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   JOIN CARD
+   ========================================================= */
+
+.student-join-card {
+  padding: 22px;
+
+  border: 1px solid #dbe5ef;
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #f8fbff
+    );
+}
+
+
+.student-join-heading {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+}
+
+
+.student-join-heading-icon {
+  width: 54px;
+  height: 54px;
+
+  flex: 0 0 54px;
+
+  border-radius: 13px;
+
+  background: #dbeafe;
+  color: #2563eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.student-join-heading h2 {
+  margin: 0;
+
+  color: #173558;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+
+.student-join-heading p {
+  margin: 4px 0 0;
+
+  color: #8192a7;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   JOIN FORM
+   ========================================================= */
+
+.student-join-form {
+  max-width: 700px;
+
+  margin-top: 18px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto;
+
+  gap: 9px;
+}
+
+
+.student-join-input {
+  height: 49px;
+
+  padding: 0 14px;
+
+  border: 1.5px solid #cddae8;
+  border-radius: 10px;
+
+  background: #ffffff;
+  color: #71859c;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+}
+
+
+.student-join-input:focus-within {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(
+      37,
+      99,
+      235,
+      0.08
+    );
+}
+
+
+.student-join-input input {
+  min-width: 0;
+
+  flex: 1;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+  color: #173558;
+
+  font-family:
+    Consolas,
+    "Courier New",
+    monospace;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 3px;
+}
+
+
+.student-join-input input::placeholder {
+  color: #9aabbe;
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  font-size: 10px;
+  font-weight: 500;
+
+  letter-spacing: normal;
+}
+
+
+.student-join-form button {
+  min-width: 112px;
+  height: 49px;
+
+  padding: 0 15px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 800;
+
+  transition:
+    background 0.18s ease,
+    transform 0.18s ease;
+}
+
+
+.student-join-form button:hover:not(:disabled) {
+  background: #1d4ed8;
+
+  transform: translateY(-1px);
+}
+
+
+.student-join-form button:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   QR NOTE
+   ========================================================= */
+
+.student-join-qr-note {
+  max-width: 700px;
+
+  margin-top: 13px;
+  padding: 10px 12px;
+
+  border-radius: 9px;
+
+  background: #edf6ff;
+  color: #2563eb;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+.student-join-qr-note svg {
+  flex-shrink: 0;
+}
+
+
+.student-join-qr-note span {
+  color: #71859c;
+
+  font-size: 8px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.student-class-stats {
+  margin-top: 19px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  gap: 13px;
+}
+
+
+.student-class-stat {
+  min-height: 95px;
+
+  padding: 16px;
+
+  border: 1px solid #dce5ef;
+  border-radius: 13px;
+
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+.student-class-stat-icon {
+  width: 48px;
+  height: 48px;
+
+  flex: 0 0 48px;
+
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.student-class-stat-icon.blue {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+
+.student-class-stat-icon.purple {
+  background: #ede9fe;
+  color: #7c3aed;
+}
+
+
+.student-class-stat-icon.green {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+
+.student-class-stat strong {
+  display: block;
+
+  color: #173558;
+
+  font-size: 21px;
+  font-weight: 850;
+}
+
+
+.student-class-stat span {
+  margin-top: 4px;
+
+  display: block;
+
+  color: #8292a6;
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   JOINED CLASS CONTAINER
+   ========================================================= */
+
+.student-joined-card {
+  margin-top: 19px;
+
+  min-height: 300px;
+
+  overflow: hidden;
+
+  border: 1px solid #dce5ef;
+  border-radius: 14px;
+
+  background: #ffffff;
+}
+
+
+.student-joined-header {
+  min-height: 65px;
+
+  padding: 0 18px;
+
+  border-bottom: 1px solid #edf1f5;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.student-joined-header h2 {
+  margin: 0;
+
+  color: #173558;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+
+.student-joined-header p {
+  margin: 4px 0 0;
+
+  color: #94a3b8;
+
+  font-size: 8px;
+}
+
+
+.student-class-count {
+  width: 31px;
+  height: 31px;
+
+  border-radius: 50%;
+
+  background: #eef5ff;
+  color: #2563eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 9px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   EMPTY
+   ========================================================= */
+
+.student-class-empty {
+  min-height: 330px;
+
+  padding: 35px;
+
+  color: #9aacbf;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+
+.student-class-empty h3 {
+  margin:
+    14px 0
+    5px;
+
+  color: #526a84;
+
+  font-size: 14px;
+}
+
+
+.student-class-empty p {
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   CLASS GRID
+   ========================================================= */
+
+.student-class-grid {
+  padding: 18px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  gap: 15px;
+}
+
+
+/* =========================================================
+   CLASS CARD
+   ========================================================= */
+
+.student-class-card {
+  padding: 17px;
+
+  border: 1px solid #dce6f0;
+  border-radius: 13px;
+
+  background: #ffffff;
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+
+.student-class-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px
+    rgba(
+      30,
+      58,
+      95,
+      0.07
+    );
+}
+
+
+.student-class-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.student-class-book-icon {
+  width: 43px;
+  height: 43px;
+
+  border-radius: 11px;
+
+  background: #e6f0ff;
+  color: #2563eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.student-class-open-status {
+  padding: 5px 8px;
+
+  border-radius: 999px;
+
+  font-size: 7px;
+  font-weight: 800;
+}
+
+
+.student-class-open-status.open {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+
+.student-class-open-status.closed {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+
+.student-class-card h3 {
+  margin:
+    15px 0
+    4px;
+
+  color: #173558;
+
+  font-size: 15px;
+}
+
+
+.student-class-course-code {
+  color: #2563eb;
+
+  font-size: 9px;
+  font-weight: 800;
+}
+
+
+.student-class-description {
+  min-height: 34px;
+
+  margin:
+    10px 0
+    0;
+
+  color: #8292a6;
+
+  font-size: 8px;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   DETAILS
+   ========================================================= */
+
+.student-class-details {
+  margin-top: 16px;
+  padding-top: 14px;
+
+  border-top: 1px solid #edf1f5;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 11px;
+}
+
+
+.student-class-details > div {
+  color: #74879d;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+.student-class-details > div > div {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.student-class-details small {
+  color: #98a6b7;
+
+  font-size: 7px;
+}
+
+
+.student-class-details strong {
+  margin-top: 2px;
+
+  color: #4c627b;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   CARD FOOTER
+   ========================================================= */
+
+.student-class-footer {
+  margin-top: 15px;
+  padding-top: 12px;
+
+  border-top: 1px solid #edf1f5;
+
+  color: #16a34a;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 8px;
+  font-weight: 750;
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.student-classes-loading {
+  min-height: 100vh;
+
+  background: #f5f8fc;
+  color: #2563eb;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+}
+
+
+.student-classes-loading p {
+  margin: 0;
+
+  color: #7f91a6;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1150px) {
+
+  .student-class-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+}
+
+
+@media (max-width: 850px) {
+
+  .student-class-stats {
+    grid-template-columns: 1fr;
+  }
+
+
+  .student-classes-search {
+    width: 55%;
+  }
+
+}
+
+
+@media (max-width: 680px) {
+
+  .student-classes-content {
+    padding:
+      24px 17px
+      35px;
+  }
+
+
+  .student-classes-topbar {
+    padding:
+      0 18px;
+  }
+
+
+  .student-classes-search {
+    width: 60%;
+  }
+
+
+  .student-classes-profile
+  > div:last-child {
+    display: none;
+  }
+
+
+  .student-join-form {
+    grid-template-columns: 1fr;
+  }
+
+
+  .student-join-form button {
+    width: 100%;
+  }
+
+
+  .student-class-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* Open course link (replaces "Class joined") */
+.student-class-open-link {
+  color: #2563eb;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.student-class-open-link:hover {
+  color: #1d4ed8;
+}
+
+.student-class-open-link:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Past (archived) classes */
+.student-past-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 14px;
+  font-size: 0.88rem;
+  color: #64748b;
+  cursor: pointer;
+}

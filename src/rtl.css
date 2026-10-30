@@ -1,0 +1,29 @@
+/* =========================================================
+   ARABIC (right-to-left)
+   The page text runs right to left. Sidebars stay where
+   they are; pop-ups sit above them.
+   ========================================================= */
+
+html[dir="rtl"] body {
+  font-family: "Segoe UI", Tahoma, "Noto Naskh Arabic", "Noto Sans Arabic", system-ui, sans-serif;
+}
+
+html[dir="rtl"] .account-menu,
+html[dir="rtl"] .account-tip,
+html[dir="rtl"] .notification-panel {
+  z-index: 6000;
+}
+
+/* Numbers, codes and emails stay left to right inside Arabic text */
+html[dir="rtl"] input[type="email"],
+html[dir="rtl"] input[type="number"],
+html[dir="rtl"] input[type="datetime-local"],
+html[dir="rtl"] input[type="time"] {
+  direction: ltr;
+  text-align: right;
+}
+
+html[dir="rtl"] .course-back svg,
+html[dir="rtl"] .todo-action svg {
+  transform: scaleX(-1);
+}

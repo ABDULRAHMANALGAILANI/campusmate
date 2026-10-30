@@ -1,0 +1,67 @@
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  color: inherit;
+  font-size: 13px;
+}
+
+.lang-switch-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.lang-switch select {
+  min-height: 32px;
+  padding: 3px 26px 3px 9px;
+
+  border: 1px solid #cfd9e7;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #15315c;
+
+  font: inherit;
+  font-size: 13px;
+
+  cursor: pointer;
+}
+
+.lang-switch select:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* Inside the account menu: a full-width row */
+.lang-switch.menu {
+  display: flex;
+  width: 100%;
+  padding: 8px 14px;
+
+  color: #334155;
+  font-size: 14px;
+}
+
+.lang-switch.menu .lang-switch-label {
+  position: static;
+  width: auto;
+  height: auto;
+  clip: auto;
+  flex: 1;
+}
+
+/* Settings card */
+.lang-switch.card {
+  display: flex;
+  gap: 10px;
+}
+
+.lang-switch.card select {
+  min-height: 42px;
+  min-width: 220px;
+  font-size: 15px;
+}

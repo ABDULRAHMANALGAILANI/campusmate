@@ -1,0 +1,168 @@
+/* =========================================================
+   TO DO (students) + TO MARK (professors)
+   ========================================================= */
+
+.todo {
+  padding: 6px 14px 14px;
+}
+
+.todo-list {
+  display: grid;
+  gap: 6px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.todo-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 10px 12px;
+
+  border: 1px solid #eef2f7;
+  border-radius: 12px;
+  background: #ffffff;
+  color: inherit;
+
+  text-decoration: none;
+}
+
+.todo-row:hover {
+  border-color: #c7d7f2;
+  background: #f8fbff;
+}
+
+.todo-row:focus-visible,
+.todo-more:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.todo-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+
+  width: 34px;
+  height: 34px;
+
+  border-radius: 10px;
+}
+
+.todo-icon.class {
+  background: #fce7f3;
+  color: #be185d;
+}
+
+.todo-icon.own {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.todo-icon.mark {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.todo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.todo-text strong {
+  overflow: hidden;
+
+  color: #15315c;
+  font-size: 14px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.todo-text small {
+  color: #64748b;
+  font-size: 12.5px;
+}
+
+.todo-due.soon {
+  color: #b45309;
+  font-weight: 700;
+}
+
+.todo-due.overdue {
+  color: #b91c1c;
+  font-weight: 700;
+}
+
+.todo-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+
+  padding: 5px 10px;
+
+  border-radius: 8px;
+  background: #eef2f7;
+  color: #334155;
+
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.todo-action.primary {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.todo-more {
+  display: block;
+
+  margin: 10px auto 0;
+  padding: 6px 12px;
+
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #2563eb;
+
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.todo-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+
+  padding: 30px 16px;
+
+  color: #64748b;
+  font-size: 13px;
+  text-align: center;
+}
+
+.todo-empty svg {
+  color: #22c55e;
+}
+
+.todo-empty strong {
+  color: #15315c;
+  font-size: 15px;
+}
+
+@media (max-width: 520px) {
+  .todo-action {
+    padding: 5px 8px;
+  }
+}

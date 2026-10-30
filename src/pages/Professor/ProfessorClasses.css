@@ -1,0 +1,1997 @@
+/* =========================================================
+   CAMPUSMATE
+   PROFESSOR CLASSES
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PAGE CONTENT
+   ========================================================= */
+
+.professor-classes-content {
+  width: 100%;
+
+  padding:
+    32px 34px
+    50px;
+
+  background: #f5f8fc;
+
+  color: #173558;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.professor-classes-header {
+  margin-bottom: 22px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+
+.professor-classes-header h1 {
+  margin: 0;
+
+  color: #173558;
+
+  font-size: 32px;
+  font-weight: 800;
+
+  line-height: 1.15;
+
+  letter-spacing: -0.5px;
+}
+
+
+.professor-classes-header p {
+  margin: 8px 0 0;
+
+  color: #7f91a7;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   CREATE CLASS BUTTON
+   ========================================================= */
+
+.create-class-button {
+  min-width: 145px;
+  height: 44px;
+
+  padding: 0 16px;
+
+  border: none;
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #1d5bd8
+    );
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 750;
+
+  box-shadow:
+    0 7px 18px
+    rgba(
+      37,
+      99,
+      235,
+      0.18
+    );
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+
+.create-class-button:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 10px 22px
+    rgba(
+      37,
+      99,
+      235,
+      0.23
+    );
+}
+
+
+/* =========================================================
+   SUCCESS / ERROR
+   ========================================================= */
+
+.professor-class-message,
+.professor-class-error {
+  margin-bottom: 18px;
+
+  padding: 13px 15px;
+
+  border-radius: 10px;
+
+  font-size: 12px;
+  font-weight: 650;
+
+  line-height: 1.5;
+}
+
+
+.professor-class-message {
+  border: 1px solid #bbf7d0;
+
+  background: #f0fdf4;
+
+  color: #15803d;
+}
+
+
+.professor-class-error {
+  border: 1px solid #fecaca;
+
+  background: #fff5f5;
+
+  color: #dc2626;
+}
+
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.professor-class-stats {
+  margin-bottom: 20px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  gap: 14px;
+}
+
+
+.professor-class-stats > div {
+  min-height: 106px;
+
+  padding: 18px;
+
+  border: 1px solid #dce6ef;
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  box-shadow:
+    0 2px 7px
+    rgba(
+      30,
+      55,
+      85,
+      0.025
+    );
+}
+
+
+.class-stat-icon {
+  width: 50px;
+  height: 50px;
+
+  flex: 0 0 50px;
+
+  border-radius: 13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.class-stat-icon.blue {
+  background: #dbeafe;
+
+  color: #2563eb;
+}
+
+
+.class-stat-icon.green {
+  background: #dcfce7;
+
+  color: #16a34a;
+}
+
+
+.class-stat-icon.purple {
+  background: #ede9fe;
+
+  color: #7c3aed;
+}
+
+
+.professor-class-stats strong {
+  display: block;
+
+  color: #173558;
+
+  font-size: 24px;
+  font-weight: 800;
+
+  line-height: 1;
+}
+
+
+.professor-class-stats small {
+  margin-top: 7px;
+
+  display: block;
+
+  color: #8092a8;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   CREATE CLASS PANEL
+   ========================================================= */
+
+.professor-create-class {
+  margin-bottom: 20px;
+
+  overflow: hidden;
+
+  border: 1px solid #dce6ef;
+  border-radius: 15px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 4px 14px
+    rgba(
+      30,
+      55,
+      85,
+      0.04
+    );
+}
+
+
+.professor-create-class-header {
+  min-height: 72px;
+
+  padding: 16px 20px;
+
+  border-bottom: 1px solid #edf1f5;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+
+.professor-create-class-header h2 {
+  margin: 0;
+
+  color: #173558;
+
+  font-size: 17px;
+  font-weight: 800;
+}
+
+
+.professor-create-class-header p {
+  margin: 5px 0 0;
+
+  color: #8798aa;
+
+  font-size: 11px;
+}
+
+
+.class-close-form-button,
+.professor-create-class-header > button {
+  width: 38px;
+  height: 38px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #f4f7fb;
+
+  color: #657b93;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.class-close-form-button:hover,
+.professor-create-class-header > button:hover {
+  background: #eaf0f7;
+
+  color: #173558;
+}
+
+
+/* =========================================================
+   CREATE FORM
+   ========================================================= */
+
+.professor-create-class-form {
+  padding: 20px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 17px;
+}
+
+
+.professor-create-class-form > div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+
+.professor-create-class-form label {
+  color: #445f7c;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+.professor-create-class-form input,
+.professor-create-class-form textarea {
+  width: 100%;
+
+  border: 1px solid #cfdae7;
+  border-radius: 10px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #173558;
+
+  font-family: inherit;
+  font-size: 13px;
+
+  transition:
+    border 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+
+.professor-create-class-form input {
+  height: 46px;
+
+  padding: 0 13px;
+}
+
+
+.professor-create-class-form textarea {
+  min-height: 92px;
+
+  padding: 12px 13px;
+
+  resize: vertical;
+}
+
+
+.professor-create-class-form input:focus,
+.professor-create-class-form textarea:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(
+      37,
+      99,
+      235,
+      0.07
+    );
+}
+
+
+.class-description-field {
+  grid-column:
+    1 /
+    -1;
+}
+
+
+.professor-create-class-form > button {
+  width: fit-content;
+  min-width: 140px;
+  height: 43px;
+
+  grid-column:
+    1 /
+    -1;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+
+.professor-create-class-form > button:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+
+.professor-create-class-form > button:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   EMPTY CLASSES
+   ========================================================= */
+
+.professor-class-empty {
+  min-height: 420px;
+
+  padding: 40px;
+
+  border: 1px solid #dce6ef;
+  border-radius: 15px;
+
+  background: #ffffff;
+
+  color: #9aaabe;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+
+.professor-class-empty h2 {
+  margin: 15px 0 6px;
+
+  color: #405c78;
+
+  font-size: 18px;
+}
+
+
+.professor-class-empty p {
+  margin: 0;
+
+  color: #8798aa;
+
+  font-size: 12px;
+}
+
+
+.professor-class-empty button {
+  min-height: 41px;
+
+  margin-top: 18px;
+  padding: 0 14px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+
+/* =========================================================
+   MAIN CLASS LAYOUT
+   ========================================================= */
+
+.professor-classes-layout {
+  display: grid;
+
+  grid-template-columns:
+    265px
+    minmax(0, 1fr);
+
+  gap: 18px;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   CLASS LIST
+   ========================================================= */
+
+.professor-class-list-card {
+  overflow: hidden;
+
+  border: 1px solid #dce6ef;
+  border-radius: 14px;
+
+  background: #ffffff;
+}
+
+
+.professor-class-list-header {
+  min-height: 61px;
+
+  padding: 0 16px;
+
+  border-bottom: 1px solid #edf1f5;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.professor-class-list-header h2 {
+  margin: 0;
+
+  color: #173558;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+
+.professor-class-list-header span {
+  width: 28px;
+  height: 28px;
+
+  border-radius: 50%;
+
+  background: #eef4ff;
+
+  color: #2563eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+
+.professor-class-list {
+  padding: 9px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+
+/* =========================================================
+   CLASS LIST ITEM
+   ========================================================= */
+
+.professor-class-list-item {
+  width: 100%;
+  min-height: 78px;
+
+  padding: 12px;
+
+  border: 1px solid transparent;
+  border-radius: 11px;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  display: grid;
+
+  grid-template-columns:
+    auto
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: 10px;
+
+  text-align: left;
+
+  font-family: inherit;
+
+  transition:
+    background 0.18s ease,
+    border 0.18s ease;
+}
+
+
+.professor-class-list-item:hover {
+  background: #f6f9fd;
+}
+
+
+.professor-class-list-item.active {
+  border-color: #c6d9fa;
+
+  background: #eef5ff;
+}
+
+
+.class-list-icon {
+  width: 38px;
+  height: 38px;
+
+  flex: 0 0 38px;
+
+  border-radius: 10px;
+
+  background: #e4efff;
+
+  color: #2563eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.class-list-info {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+.class-list-info strong {
+  overflow: hidden;
+
+  color: #173558;
+
+  font-size: 12px;
+  font-weight: 750;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+
+.class-list-info small {
+  margin-top: 3px;
+
+  color: #788ca3;
+
+  font-size: 9px;
+}
+
+
+.class-list-info span {
+  margin-top: 6px;
+
+  color: #8293a7;
+
+  display: flex;
+  align-items: center;
+
+  gap: 4px;
+
+  font-size: 8px;
+}
+
+
+.class-state-dot {
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+}
+
+
+.class-state-dot.active {
+  background: #22c55e;
+}
+
+
+.class-state-dot.closed {
+  background: #94a3b8;
+}
+
+
+/* =========================================================
+   SELECTED CLASS
+   ========================================================= */
+
+.professor-selected-class {
+  overflow: hidden;
+
+  border: 1px solid #dce6ef;
+  border-radius: 14px;
+
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   SELECTED CLASS HEADER
+   ========================================================= */
+
+.selected-class-header {
+  padding: 20px;
+
+  border-bottom: 1px solid #edf1f5;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+
+.selected-class-title {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+}
+
+
+.selected-class-title h2 {
+  margin: 0;
+
+  color: #173558;
+
+  font-size: 23px;
+  font-weight: 800;
+}
+
+
+.selected-class-title span {
+  padding: 5px 8px;
+
+  border-radius: 999px;
+
+  font-size: 8px;
+  font-weight: 800;
+}
+
+
+.selected-class-title span.open {
+  background: #dcfce7;
+
+  color: #15803d;
+}
+
+
+.selected-class-title span.closed {
+  background: #f1f5f9;
+
+  color: #64748b;
+}
+
+
+.selected-class-header > div:first-child > p {
+  margin: 7px 0 0;
+
+  color: #2563eb;
+
+  font-size: 11px;
+  font-weight: 750;
+}
+
+
+.selected-class-header > div:first-child > small {
+  margin-top: 6px;
+
+  display: block;
+
+  color: #7f91a7;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   CLASS ACTIONS
+   ========================================================= */
+
+.selected-class-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+.class-open-toggle,
+.delete-class-button {
+  min-height: 40px;
+
+  padding: 0 12px;
+
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 750;
+}
+
+
+.class-open-toggle {
+  border: 1px solid #cfdae7;
+
+  background: #ffffff;
+
+  color: #50677f;
+}
+
+
+.class-open-toggle:hover {
+  background: #f5f8fc;
+}
+
+
+.delete-class-button {
+  border: 1px solid #fecaca;
+
+  background: #fff7f7;
+
+  color: #dc2626;
+}
+
+
+.delete-class-button:hover {
+  background: #fee2e2;
+}
+
+
+/* =========================================================
+   JOIN SECTION
+   ========================================================= */
+
+.professor-class-join-grid {
+  padding: 20px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.35fr)
+    minmax(240px, 0.65fr);
+
+  gap: 16px;
+}
+
+
+/* =========================================================
+   CODE CARD
+   ========================================================= */
+
+.class-code-card,
+.class-qr-card {
+  border: 1px solid #dce6ef;
+  border-radius: 13px;
+
+  background: #fafdff;
+}
+
+
+.class-code-card {
+  padding: 20px;
+}
+
+
+.class-card-heading {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 10px;
+
+  color: #2563eb;
+}
+
+
+.class-card-heading h3 {
+  margin: 0;
+
+  color: #173558;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+
+.class-card-heading p {
+  margin: 4px 0 0;
+
+  color: #8192a7;
+
+  font-size: 9px;
+}
+
+
+.class-code {
+  margin-top: 20px;
+
+  color: #2563eb;
+
+  font-family:
+    Consolas,
+    "Courier New",
+    monospace;
+
+  font-size: 35px;
+  font-weight: 900;
+
+  letter-spacing: 7px;
+}
+
+
+.class-code-buttons {
+  margin-top: 18px;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+
+.class-code-buttons button {
+  height: 37px;
+
+  padding: 0 11px;
+
+  border: 1px solid #d4dfeb;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #526a83;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+
+.class-code-buttons button:hover {
+  border-color: #a9c6f5;
+
+  background: #f4f8ff;
+
+  color: #2563eb;
+}
+
+
+/* =========================================================
+   QR CARD
+   ========================================================= */
+
+.class-qr-card {
+  padding: 18px;
+
+  text-align: center;
+}
+
+
+.class-qr-box {
+  width: fit-content;
+
+  margin: 0 auto;
+
+  padding: 7px;
+
+  border-radius: 11px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 3px 12px
+    rgba(
+      15,
+      23,
+      42,
+      0.05
+    );
+}
+
+
+.class-qr-card h3 {
+  margin: 12px 0 4px;
+
+  color: #173558;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+
+.class-qr-card p {
+  margin: 0;
+
+  color: #8192a7;
+
+  font-size: 9px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   MANUAL ADD STUDENT
+   ========================================================= */
+
+.professor-manual-student {
+  margin:
+    0 20px
+    20px;
+
+  padding: 18px;
+
+  border: 1px solid #dce6ef;
+  border-radius: 13px;
+
+  background: #ffffff;
+}
+
+
+.professor-manual-student-heading {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+}
+
+
+.professor-manual-heading-icon {
+  width: 43px;
+  height: 43px;
+
+  border-radius: 11px;
+
+  background: #e6f0ff;
+
+  color: #2563eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.professor-manual-student-heading h3 {
+  margin: 0;
+
+  color: #173558;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+
+.professor-manual-student-heading p {
+  margin: 4px 0 0;
+
+  color: #8192a7;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   ADD STUDENT FORM
+   ========================================================= */
+
+.professor-manual-student-form {
+  margin-top: 16px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr)
+    auto;
+
+  align-items: end;
+
+  gap: 11px;
+}
+
+
+.professor-manual-student-form > div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+
+.professor-manual-student-form label {
+  color: #526a83;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+
+.professor-manual-student-form input {
+  width: 100%;
+  height: 43px;
+
+  padding: 0 11px;
+
+  border: 1px solid #d1dce8;
+  border-radius: 9px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #173558;
+
+  font-family: inherit;
+  font-size: 11px;
+}
+
+
+.professor-manual-student-form input:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(
+      37,
+      99,
+      235,
+      0.07
+    );
+}
+
+
+.professor-manual-student-form > button {
+  height: 43px;
+
+  padding: 0 13px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 750;
+
+  white-space: nowrap;
+}
+
+
+.professor-manual-student-form > button:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+
+.professor-manual-student-form > button:disabled {
+  opacity: 0.6;
+}
+
+
+.professor-manual-note {
+  margin-top: 9px;
+
+  color: #8a9bad;
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   CLASS MEMBERS
+   ========================================================= */
+
+.professor-class-members {
+  margin:
+    0 20px
+    20px;
+
+  overflow: hidden;
+
+  border: 1px solid #dce6ef;
+  border-radius: 13px;
+
+  background: #ffffff;
+}
+
+
+.class-members-header {
+  min-height: 66px;
+
+  padding: 0 17px;
+
+  border-bottom: 1px solid #edf1f5;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+
+.class-members-header h3 {
+  margin: 0;
+
+  color: #173558;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+
+.class-members-header p {
+  margin: 4px 0 0;
+
+  color: #8b9bad;
+
+  font-size: 8px;
+}
+
+
+.class-members-header > span {
+  min-width: 38px;
+  height: 31px;
+
+  padding: 0 9px;
+
+  border-radius: 999px;
+
+  background: #eef5ff;
+
+  color: #2563eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  font-size: 9px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   MEMBER SEARCH
+   ========================================================= */
+
+.class-member-search {
+  height: 43px;
+
+  margin: 13px 17px;
+
+  padding: 0 11px;
+
+  border: 1px solid #d6e0eb;
+  border-radius: 9px;
+
+  background: #f9fbfd;
+
+  color: #8292a6;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+}
+
+
+.class-member-search input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #173558;
+
+  font-family: inherit;
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   MEMBER EMPTY
+   ========================================================= */
+
+.class-members-empty {
+  min-height: 220px;
+
+  padding: 30px;
+
+  color: #9aabbe;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+
+.class-members-empty h4 {
+  margin: 11px 0 5px;
+
+  color: #526a83;
+
+  font-size: 13px;
+}
+
+
+.class-members-empty p {
+  margin: 0;
+
+  color: #8a9bad;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   MEMBERS TABLE
+   ========================================================= */
+
+.class-members-table {
+  width: 100%;
+}
+
+
+.class-member-table-head,
+.class-member-row {
+  display: grid;
+
+  grid-template-columns:
+    1.2fr
+    0.85fr
+    0.9fr
+    0.75fr;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 12px 17px;
+}
+
+
+.class-member-table-head {
+  background: #f7f9fc;
+
+  color: #8495a8;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.25px;
+}
+
+
+.class-member-row {
+  min-height: 59px;
+
+  border-top: 1px solid #edf1f5;
+
+  color: #637990;
+
+  font-size: 10px;
+}
+
+
+.class-member-person {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+}
+
+
+.class-member-person > div {
+  width: 34px;
+  height: 34px;
+
+  flex: 0 0 34px;
+
+  border-radius: 50%;
+
+  background: #e7f0ff;
+
+  color: #2563eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+
+.class-member-person strong {
+  color: #36516e;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   CAMPUS ID
+   ========================================================= */
+
+.class-campus-id {
+  width: fit-content;
+
+  padding: 5px 8px;
+
+  border-radius: 7px;
+
+  background: #eef4ff;
+
+  color: #2563eb;
+
+  font-family:
+    Consolas,
+    "Courier New",
+    monospace;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.25px;
+}
+
+
+/* =========================================================
+   DELETE MODAL
+   ========================================================= */
+
+.delete-class-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 5000;
+
+  padding: 20px;
+
+  background:
+    rgba(
+      15,
+      23,
+      42,
+      0.5
+    );
+
+  backdrop-filter: blur(3px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.delete-class-modal {
+  width: 100%;
+  max-width: 440px;
+
+  padding: 28px;
+
+  border-radius: 17px;
+
+  background: #ffffff;
+
+  text-align: center;
+
+  box-shadow:
+    0 25px 70px
+    rgba(
+      15,
+      23,
+      42,
+      0.22
+    );
+}
+
+
+.delete-class-warning-icon {
+  width: 60px;
+  height: 60px;
+
+  margin:
+    0 auto
+    15px;
+
+  border-radius: 50%;
+
+  background: #fee2e2;
+
+  color: #dc2626;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.delete-class-modal h2 {
+  margin: 0;
+
+  color: #173558;
+
+  font-size: 21px;
+  font-weight: 800;
+}
+
+
+.delete-class-modal > p {
+  margin:
+    10px 0
+    18px;
+
+  color: #70849a;
+
+  font-size: 12px;
+
+  line-height: 1.55;
+}
+
+
+.delete-class-warning {
+  padding: 12px;
+
+  border: 1px solid #fecaca;
+  border-radius: 9px;
+
+  background: #fff7f7;
+
+  color: #dc2626;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 8px;
+
+  text-align: left;
+}
+
+
+.delete-class-warning svg {
+  flex-shrink: 0;
+}
+
+
+.delete-class-warning span {
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+
+.delete-class-modal-actions {
+  margin-top: 20px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 10px;
+}
+
+
+.delete-class-modal-actions button {
+  height: 44px;
+
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+
+.delete-class-cancel {
+  border: 1px solid #d2dde9;
+
+  background: #ffffff;
+
+  color: #60758d;
+}
+
+
+.delete-class-confirm {
+  border: none;
+
+  background: #dc2626;
+
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+}
+
+
+.delete-class-confirm:hover {
+  background: #b91c1c;
+}
+
+
+.delete-class-modal-actions button:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.professor-class-loading {
+  min-height: 100vh;
+
+  background: #f5f8fc;
+
+  color: #2563eb;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+}
+
+
+.professor-class-loading p {
+  margin: 0;
+
+  color: #7f91a7;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .professor-classes-layout {
+    grid-template-columns:
+      220px
+      minmax(0, 1fr);
+  }
+
+
+  .professor-class-join-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .professor-manual-student-form {
+    grid-template-columns:
+      1fr
+      1fr;
+  }
+
+
+  .professor-manual-student-form > button {
+    width: fit-content;
+
+    grid-column:
+      1 /
+      -1;
+  }
+
+}
+
+
+@media (max-width: 850px) {
+
+  .professor-class-stats {
+    grid-template-columns: 1fr;
+  }
+
+
+  .professor-classes-layout {
+    grid-template-columns: 1fr;
+  }
+
+
+  .professor-class-list {
+    display: grid;
+
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+
+  .selected-class-header {
+    flex-direction: column;
+  }
+
+
+  .selected-class-actions {
+    width: 100%;
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .professor-classes-content {
+    padding:
+      22px 16px
+      35px;
+  }
+
+
+  .professor-classes-header {
+    flex-direction: column;
+  }
+
+
+  .create-class-button {
+    width: 100%;
+  }
+
+
+  .professor-create-class-form {
+    grid-template-columns: 1fr;
+  }
+
+
+  .class-description-field {
+    grid-column: auto;
+  }
+
+
+  .professor-create-class-form > button {
+    width: 100%;
+
+    grid-column: auto;
+  }
+
+
+  .professor-class-list {
+    grid-template-columns: 1fr;
+  }
+
+
+  .selected-class-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+
+  .selected-class-actions button {
+    width: 100%;
+  }
+
+
+  .professor-manual-student-form {
+    grid-template-columns: 1fr;
+  }
+
+
+  .professor-manual-student-form > button {
+    width: 100%;
+
+    grid-column: auto;
+
+    justify-content: center;
+  }
+
+
+  .class-member-table-head {
+    display: none;
+  }
+
+
+  .class-member-row {
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+  }
+
+
+  .delete-class-modal-actions {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* Open course page link */
+.class-open-course {
+  border-color: #2563eb;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.class-open-course:hover {
+  background: #1d4ed8;
+}
+
+@media (max-width: 650px) {
+  .selected-class-actions {
+    flex-wrap: wrap;
+  }
+
+  .class-open-course {
+    width: 100%;
+  }
+}
+
+
+/* Co-taught class (you are a co-lecturer or tutor) */
+.class-coteach-chip {
+  background: #f5f3ff !important;
+  color: #6d28d9 !important;
+  cursor: default !important;
+}
+
+
+/* Co-taught class (you are a co-lecturer or tutor) */
+.class-coteach-chip {
+  background: #f5f3ff !important;
+  color: #6d28d9 !important;
+  cursor: default !important;
+}
+
+/* Archived classes (past semesters) */
+.professor-archived-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 4px 10px;
+  font-size: 0.82rem;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.class-archived-badge {
+  display: inline-block;
+  width: fit-content;
+  margin-top: 2px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 0.7rem;
+  font-style: normal;
+  font-weight: 700;
+}

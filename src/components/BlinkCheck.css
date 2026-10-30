@@ -1,0 +1,117 @@
+/* =========================================================
+   BLINK CHECK (face sign-in)
+   ========================================================= */
+
+.blink-check {
+  margin-top: 16px;
+}
+
+.blink-camera {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+
+  border-radius: 12px;
+  background: #0f172a;
+}
+
+.blink-camera video {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  /* mirror, like looking in a mirror */
+  transform: scaleX(-1);
+}
+
+.blink-camera-placeholder {
+  position: absolute;
+  inset: 0;
+
+  display: grid;
+  place-items: center;
+
+  color: #94a3b8;
+}
+
+/* Oval guide for where to put your face */
+.blink-oval {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 46%;
+  height: 72%;
+
+  border: 3px dashed rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+
+  transition: border-color 0.2s ease;
+}
+
+.blink-camera.ready .blink-oval {
+  border-style: solid;
+  border-color: #60a5fa;
+}
+
+.blink-camera.passed .blink-oval {
+  border-style: solid;
+  border-color: #22c55e;
+}
+
+.blink-status {
+  margin-top: 14px;
+
+  text-align: center;
+}
+
+.blink-status strong {
+  display: block;
+
+  color: #1b1b1b;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.blink-status p {
+  margin: 4px 0 0;
+
+  color: #5e5e5e;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.blink-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  margin-top: 12px;
+}
+
+.blink-dots span {
+  width: 14px;
+  height: 14px;
+
+  border: 2px solid #94a3b8;
+  border-radius: 50%;
+
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.blink-dots span.done {
+  border-color: #16a34a;
+  background: #16a34a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blink-oval,
+  .blink-dots span {
+    transition: none;
+  }
+}

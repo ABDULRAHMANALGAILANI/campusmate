@@ -1,0 +1,705 @@
+:root {
+  --professor-sidebar-width: 280px;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.professor-sidebar {
+  width:
+    var(
+      --professor-sidebar-width
+    );
+
+  height: 100vh;
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  z-index: 2000;
+
+  padding:
+    20px 14px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #164675 0%,
+      #0c355c 100%
+    );
+
+  color: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  transition:
+    width 0.25s ease;
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.professor-sidebar-brand {
+  min-height: 66px;
+
+  padding:
+    7px 8px;
+
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+
+  gap: 10px;
+}
+
+
+.professor-sidebar:not(
+  .collapsed
+)
+.professor-sidebar-brand:hover {
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.05
+    );
+}
+
+
+.professor-sidebar-logo {
+  width: 38px;
+  height: 38px;
+
+  flex:
+    0 0
+    38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+}
+
+
+.professor-sidebar-brand-text {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+.professor-sidebar-brand-text strong {
+  color: #ffffff;
+
+  font-size: 20px;
+  font-weight: 800;
+
+  line-height: 1.1;
+}
+
+
+.professor-sidebar-brand-text span {
+  margin-top: 5px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.68
+    );
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   TOGGLE
+   ========================================================= */
+
+.professor-sidebar-toggle {
+  width: 30px;
+  height: 30px;
+
+  margin-left: auto;
+
+  flex:
+    0 0
+    30px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.12
+    );
+
+  border-radius: 7px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    background 0.18s ease;
+}
+
+
+.professor-sidebar-toggle:hover {
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.15
+    );
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.professor-sidebar-nav {
+  margin-top: 23px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+
+  overflow-y: auto;
+
+  scrollbar-width: none;
+}
+
+
+.professor-sidebar-nav::-webkit-scrollbar {
+  display: none;
+}
+
+
+.professor-sidebar-link {
+  min-height: 48px;
+
+  padding:
+    0 12px;
+
+  border-radius: 10px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.78
+    );
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  text-decoration: none;
+
+  font-size: 12px;
+  font-weight: 650;
+
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s ease;
+}
+
+
+.professor-sidebar-link svg {
+  width: 22px;
+
+  flex:
+    0 0
+    22px;
+}
+
+
+.professor-sidebar-link:hover {
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+
+  color: #ffffff;
+}
+
+
+.professor-sidebar-link.active {
+  background:
+    linear-gradient(
+      135deg,
+      #2f75ee,
+      #2463d9
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 8px 20px
+    rgba(
+      16,
+      88,
+      215,
+      0.28
+    );
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.professor-sidebar-footer {
+  margin-top: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+
+.professor-sidebar-tip {
+  padding: 15px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.13
+    );
+
+  border-radius: 13px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.05
+    );
+}
+
+
+.professor-sidebar-tip > span {
+  font-size: 20px;
+}
+
+
+.professor-sidebar-tip p {
+  margin:
+    9px 0 0;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.86
+    );
+
+  font-size: 9px;
+
+  line-height: 1.55;
+}
+
+
+.professor-sidebar-tip small {
+  margin-top: 10px;
+
+  display: block;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.55
+    );
+
+  font-size: 8px;
+}
+
+
+.professor-sidebar-logout {
+  min-height: 48px;
+
+  padding:
+    0 12px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: transparent;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.85
+    );
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+.professor-sidebar-logout:hover {
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   COLLAPSED
+   ========================================================= */
+
+.professor-sidebar.collapsed {
+  padding:
+    20px 12px;
+}
+
+
+.professor-sidebar.collapsed
+.professor-sidebar-brand {
+  padding:
+    7px 0;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+
+.professor-sidebar.collapsed
+.professor-sidebar-toggle {
+  margin-left: 0;
+}
+
+
+.professor-sidebar.collapsed
+.professor-sidebar-nav {
+  margin-top: 18px;
+}
+
+
+.professor-sidebar.collapsed
+.professor-sidebar-link {
+  width: 54px;
+
+  margin:
+    0 auto;
+
+  padding: 0;
+
+  justify-content: center;
+}
+
+
+.professor-sidebar.collapsed
+.professor-sidebar-logout {
+  width: 54px;
+
+  margin:
+    0 auto;
+
+  padding: 0;
+
+  justify-content: center;
+}
+
+
+/* =========================================================
+   SHARED PROFESSOR PAGE LAYOUT
+   ========================================================= */
+
+.professor-dashboard-page {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #f5f8fc;
+}
+
+
+.professor-main {
+  min-width: 0;
+  min-height: 100vh;
+
+  margin-left:
+    var(
+      --professor-sidebar-width
+    );
+
+  width:
+    calc(
+      100% -
+      var(
+        --professor-sidebar-width
+      )
+    );
+
+  background: #f5f8fc;
+
+  transition:
+    margin-left 0.25s ease,
+    width 0.25s ease;
+}
+
+
+/* =========================================================
+   SHARED TOPBAR
+   ========================================================= */
+
+.professor-topbar {
+  width: 100%;
+  height: 82px;
+
+  padding:
+    0 32px;
+
+  border-bottom:
+    1px solid
+    #e1e9f2;
+
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 100;
+}
+
+
+.professor-search {
+  width: min(
+    620px,
+    55%
+  );
+
+  height: 44px;
+
+  padding:
+    0 13px;
+
+  border:
+    1px solid
+    #d0deec;
+
+  border-radius: 9px;
+
+  background: #f9fbfd;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  color: #8295aa;
+}
+
+
+.professor-search input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #173558;
+
+  font-family: inherit;
+  font-size: 11px;
+}
+
+
+.professor-topbar-right {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.professor-avatar {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #4f46e5
+    );
+
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+
+.professor-profile-info {
+  min-width: 85px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+.professor-profile-info strong {
+  color: #173558;
+
+  font-size: 10px;
+}
+
+
+.professor-profile-info small {
+  margin-top: 2px;
+
+  color: #8999ab;
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (
+  max-width: 760px
+) {
+
+  :root {
+    --professor-sidebar-width: 92px;
+  }
+
+
+  .professor-sidebar {
+    width: 92px;
+  }
+
+
+  .professor-sidebar-brand-text,
+  .professor-sidebar-link span,
+  .professor-sidebar-tip,
+  .professor-sidebar-logout span {
+    display: none;
+  }
+
+
+  .professor-sidebar-brand {
+    flex-direction: column;
+
+    padding:
+      7px 0;
+
+    gap: 8px;
+  }
+
+
+  .professor-sidebar-toggle {
+    margin-left: 0;
+  }
+
+
+  .professor-sidebar-link,
+  .professor-sidebar-logout {
+    width: 54px;
+
+    margin:
+      0 auto;
+
+    padding: 0;
+
+    justify-content: center;
+  }
+
+
+  .professor-topbar {
+    padding:
+      0 18px;
+  }
+
+
+  .professor-search {
+    width: 65%;
+  }
+
+
+  .professor-profile-info {
+    display: none;
+  }
+
+}

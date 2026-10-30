@@ -1,0 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f8fc;
+  color: #12233f;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/* =========================================================
+   PHONES: number cards two per row
+   The stat cards at the top of each page used to stack one
+   per row on phones; two per row means much less scrolling.
+   ========================================================= */
+
+@media (max-width: 640px) {
+  .assignments-stats,
+  .stats-grid,
+  .study-stats,
+  .student-project-stats,
+  .student-class-stats,
+  .student-att-stats,
+  .profile-stats-grid,
+  .professor-dashboard-stats,
+  .professor-class-stats,
+  .professor-student-stats,
+  .professor-profile-stats,
+  .professor-notification-stats,
+  .prof-att-stats,
+  .prof-assignment-stats {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+
+  .assignments-stats > *,
+  .stats-grid > *,
+  .study-stats > *,
+  .student-project-stats > *,
+  .student-class-stats > *,
+  .student-att-stats > *,
+  .profile-stats-grid > *,
+  .professor-dashboard-stats > *,
+  .professor-class-stats > *,
+  .professor-student-stats > *,
+  .professor-profile-stats > *,
+  .professor-notification-stats > *,
+  .prof-att-stats > *,
+  .prof-assignment-stats > * {
+    min-width: 0;
+    min-height: 0 !important;
+    overflow: hidden;
+  }
+
+  /* Long words on the professor dashboard shortcut card */
+  .professor-dashboard-stats strong {
+    overflow-wrap: anywhere;
+  }
+}

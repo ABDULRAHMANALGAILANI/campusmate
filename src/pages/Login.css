@@ -1,0 +1,570 @@
+/* =========================================================
+   CAMPUSMATE SIGN-IN
+   Layout and flow modelled on the Outlook / Microsoft
+   account sign-in: one white card, one question per step.
+   ========================================================= */
+
+.signin-page {
+  --signin-blue: #0067b8;
+  --signin-blue-hover: #005da6;
+  --signin-text: #1b1b1b;
+  --signin-muted: #5e5e5e;
+  --signin-line: #8a8a8a;
+  --signin-error: #e81123;
+  --signin-bg: #f2f2f2;
+
+  box-sizing: border-box;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  padding: 24px 16px 64px;
+
+  background: var(--signin-bg);
+  color: var(--signin-text);
+
+  font-family:
+    "Segoe UI",
+    "Segoe UI Web (West European)",
+    -apple-system,
+    BlinkMacSystemFont,
+    Roboto,
+    "Helvetica Neue",
+    sans-serif;
+  font-size: 15px;
+}
+
+
+.signin-page *,
+.signin-page *::before,
+.signin-page *::after {
+  box-sizing: border-box;
+}
+
+
+/* ---------- Card ---------- */
+
+.signin-card {
+  width: 100%;
+  max-width: 440px;
+
+  padding: 44px;
+
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+
+  overflow: hidden;
+}
+
+.signin-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: var(--signin-blue);
+
+  font-size: 19px;
+  font-weight: 600;
+}
+
+
+/* ---------- Step transition (responds to Next / Back) ---------- */
+
+.signin-step {
+  animation: signin-slide-in 0.25s ease-out;
+}
+
+@keyframes signin-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .signin-step {
+    animation: none;
+  }
+}
+
+
+/* ---------- Text ---------- */
+
+.signin-title {
+  margin: 16px 0 12px;
+
+  color: var(--signin-text);
+
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.75rem;
+}
+
+.signin-text {
+  margin: 16px 0 0;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.signin-error {
+  margin: 0 0 8px;
+
+  color: var(--signin-error);
+
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.signin-sr-only {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+
+/* ---------- Inputs (underline style) ---------- */
+
+.signin-input {
+  width: 100%;
+
+  padding: 6px 10px 6px 0;
+
+  border: none;
+  border-bottom: 1px solid var(--signin-line);
+  border-radius: 0;
+
+  background: transparent;
+  color: var(--signin-text);
+
+  font: inherit;
+  font-size: 15px;
+  line-height: 1.6;
+
+  outline: none;
+}
+
+.signin-input:hover {
+  border-bottom-color: var(--signin-text);
+}
+
+.signin-input:focus {
+  border-bottom: 2px solid var(--signin-blue);
+  padding-bottom: 5px;
+}
+
+.signin-input.has-error {
+  border-bottom-color: var(--signin-error);
+}
+
+.signin-input::placeholder {
+  color: var(--signin-muted);
+}
+
+.signin-password {
+  position: relative;
+}
+
+.signin-password .signin-input {
+  padding-right: 36px;
+}
+
+.signin-eye {
+  position: absolute;
+  right: 0;
+  bottom: 4px;
+
+  display: grid;
+  place-items: center;
+
+  width: 30px;
+  height: 30px;
+
+  border: none;
+  background: none;
+  color: var(--signin-muted);
+
+  cursor: pointer;
+}
+
+
+/* ---------- Links ---------- */
+
+.signin-link {
+  padding: 0;
+
+  border: none;
+  background: none;
+  color: var(--signin-blue);
+
+  font: inherit;
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+.signin-link:hover {
+  color: var(--signin-blue-hover);
+  text-decoration: underline;
+}
+
+
+/* ---------- "← email" identity row ---------- */
+
+.signin-identity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  max-width: 100%;
+  margin-top: 16px;
+  padding: 4px 0;
+
+  border: none;
+  background: none;
+  color: var(--signin-text);
+
+  font: inherit;
+  font-size: 15px;
+
+  cursor: pointer;
+}
+
+.signin-identity span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.signin-identity:hover span {
+  text-decoration: underline;
+}
+
+
+/* ---------- Buttons ---------- */
+
+.signin-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+
+  margin-top: 32px;
+}
+
+.signin-button {
+  min-width: 108px;
+  min-height: 32px;
+
+  padding: 4px 12px;
+
+  border: none;
+  border-radius: 0;
+  background: #cccccc;
+  color: var(--signin-text);
+
+  font: inherit;
+  font-size: 15px;
+
+  cursor: pointer;
+}
+
+.signin-button:hover {
+  background: #b3b3b3;
+}
+
+.signin-button.primary {
+  background: var(--signin-blue);
+  color: #ffffff;
+}
+
+.signin-button.primary:hover {
+  background: var(--signin-blue-hover);
+}
+
+.signin-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* ---------- Keyboard focus ---------- */
+
+.signin-button:focus-visible,
+.signin-link:focus-visible,
+.signin-identity:focus-visible,
+.signin-eye:focus-visible {
+  outline: 2px solid var(--signin-text);
+  outline-offset: 2px;
+}
+
+
+/* ---------- Second card + footer ---------- */
+
+.signin-options {
+  padding: 16px 44px;
+}
+
+.signin-options p {
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.signin-footer {
+  color: var(--signin-muted);
+
+  font-size: 12px;
+}
+
+
+/* ---------- Phones: card fills the screen like Outlook ---------- */
+
+@media (max-width: 600px) {
+  .signin-page {
+    justify-content: flex-start;
+
+    padding: 0;
+
+    background: #ffffff;
+  }
+
+  .signin-card {
+    max-width: none;
+
+    padding: 24px;
+
+    box-shadow: none;
+  }
+
+  .signin-options {
+    padding: 16px 24px;
+
+    border-top: 1px solid #e6e6e6;
+  }
+}
+
+
+/* ---------- Reset password page ---------- */
+
+.signin-input-spaced {
+  margin-top: 16px;
+}
+
+.signin-button-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+}
+
+
+/* ---------- Create account page ---------- */
+
+.signin-subtitle {
+  margin-top: 0;
+}
+
+.signin-error-spaced {
+  margin-top: 16px;
+}
+
+.signin-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  margin-top: 20px;
+}
+
+.signin-name-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.signin-switch {
+  margin-top: 24px;
+}
+
+
+/* ---------- Fingerprint / face sign-in ---------- */
+
+.signin-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin: 24px 0 14px;
+
+  color: #5e5e5e;
+  font-size: 13px;
+}
+
+.signin-divider::before,
+.signin-divider::after {
+  flex-grow: 1;
+  height: 1px;
+
+  background: #e1e1e1;
+
+  content: "";
+}
+
+.signin-biometric {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.signin-biometric-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 44px;
+  padding: 0 12px;
+
+  border: 1px solid #8a8a8a;
+  border-radius: 0;
+  background: #ffffff;
+  color: var(--signin-text);
+
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.signin-biometric-button:hover {
+  background: #f2f2f2;
+}
+
+.signin-biometric-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.signin-biometric-button svg {
+  color: var(--signin-blue);
+}
+
+.signin-biometric-button:focus-visible {
+  outline: 2px solid var(--signin-text);
+  outline-offset: 2px;
+}
+
+
+/* ---------- Footer: help, privacy, language ---------- */
+
+.signin-footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+.signin-footer-links a {
+  color: var(--signin-muted);
+  text-decoration: none;
+}
+
+.signin-footer-links a:hover {
+  color: var(--signin-blue);
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .signin-footer-links {
+    padding: 16px 24px 24px;
+  }
+}
+
+/* ---------- Privacy agreement on Create account ---------- */
+
+.signin-agree {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  margin-top: 18px;
+
+  color: var(--signin-text);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.signin-agree input {
+  flex-shrink: 0;
+  width: 17px;
+  height: 17px;
+  margin-top: 1px;
+
+  accent-color: var(--signin-blue);
+}
+
+.signin-agree a {
+  color: var(--signin-blue);
+}
+
+
+/* ---------- Privacy agreement screen ---------- */
+
+.privacy-gate .signin-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.privacy-gate-points {
+  display: grid;
+  gap: 8px;
+
+  margin: 12px 0;
+  padding-inline-start: 20px;
+
+  color: var(--signin-text);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.privacy-gate-loading {
+  display: grid;
+  place-items: center;
+
+  min-height: 100vh;
+
+  background: #f5f8fc;
+  color: #64748b;
+
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 14px;
+}
+
+.signin-deleted {
+  margin: 14px 0 0;
+  padding: 10px 12px;
+
+  background: #ecfdf5;
+  color: #065f46;
+
+  font-size: 14px;
+}

@@ -1,0 +1,558 @@
+/* =========================================================
+   PROFESSOR SETTINGS
+   ========================================================= */
+
+.professor-settings-content {
+  padding: 30px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.professor-settings-header {
+  margin-bottom: 22px;
+}
+
+.professor-settings-header h1 {
+  margin: 0;
+
+  color: #143456;
+
+  font-size: 29px;
+  font-weight: 800;
+}
+
+.professor-settings-header p {
+  margin: 6px 0 0;
+
+  color: #8191a7;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.professor-settings-message {
+  margin-bottom: 18px;
+
+  padding: 12px 14px;
+
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+
+  background: #f0fdf4;
+  color: #15803d;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.professor-settings-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.1fr)
+    minmax(360px, 0.9fr);
+
+  gap: 18px;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.professor-settings-card {
+  overflow: hidden;
+
+  border: 1px solid #e0e7f0;
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 4px 14px
+    rgba(29, 55, 90, 0.03);
+}
+
+.professor-settings-card-header {
+  padding: 18px 19px;
+
+  border-bottom: 1px solid #edf1f5;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color: #2563eb;
+}
+
+.professor-settings-card-header h2 {
+  margin: 0;
+
+  color: #173558;
+
+  font-size: 14px;
+}
+
+.professor-settings-card-header p {
+  margin: 3px 0 0;
+
+  color: #8a99ad;
+
+  font-size: 9px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   SETTING ROW
+   ========================================================= */
+
+.professor-setting-row {
+  min-height: 84px;
+
+  padding: 14px 18px;
+
+  border-bottom: 1px solid #edf1f5;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+}
+
+.professor-setting-row-icon {
+  width: 39px;
+  height: 39px;
+
+  flex: 0 0 39px;
+
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.professor-setting-row-icon.blue {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.professor-setting-row-icon.purple {
+  background: #ede9fe;
+  color: #7c3aed;
+}
+
+.professor-setting-row-icon.green {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.professor-setting-row-icon.orange {
+  background: #ffedd5;
+  color: #ea580c;
+}
+
+.professor-setting-row-text {
+  min-width: 0;
+
+  flex: 1;
+}
+
+.professor-setting-row-text strong {
+  color: #36516e;
+
+  font-size: 10px;
+}
+
+.professor-setting-row-text p {
+  margin: 4px 0 0;
+
+  color: #8a99ad;
+
+  font-size: 8px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   SWITCH
+   ========================================================= */
+
+.professor-setting-switch {
+  position: relative;
+
+  width: 42px;
+  height: 23px;
+
+  flex: 0 0 42px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 999px;
+
+  background: #d7e0ea;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease;
+}
+
+.professor-setting-switch > span {
+  position: absolute;
+
+  top: 3px;
+  left: 3px;
+
+  width: 17px;
+  height: 17px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 1px 4px
+    rgba(15, 23, 42, 0.2);
+
+  transition:
+    transform 0.2s ease;
+}
+
+.professor-setting-switch.active {
+  background: #2563eb;
+}
+
+.professor-setting-switch.active > span {
+  transform:
+    translateX(19px);
+}
+
+
+/* =========================================================
+   SAVE AREA
+   ========================================================= */
+
+.professor-settings-save-area {
+  padding: 15px 18px;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.professor-settings-save {
+  height: 39px;
+
+  padding: 0 14px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 750;
+}
+
+.professor-settings-save:hover {
+  background: #1d4ed8;
+}
+
+.professor-settings-save:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   ACCOUNT
+   ========================================================= */
+
+.professor-settings-account {
+  margin: 17px;
+
+  overflow: hidden;
+
+  border: 1px solid #e5ebf2;
+  border-radius: 10px;
+}
+
+.professor-settings-account > div {
+  min-height: 58px;
+
+  padding: 11px 13px;
+
+  border-bottom: 1px solid #edf1f5;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+.professor-settings-account > div:last-child {
+  border-bottom: none;
+}
+
+.professor-settings-account span {
+  color: #7a8ba0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  font-size: 9px;
+}
+
+.professor-settings-account strong {
+  color: #36516e;
+
+  font-size: 9px;
+
+  text-align: right;
+}
+
+.professor-setting-role {
+  padding: 5px 8px;
+
+  border-radius: 999px;
+
+  background: #e8f1ff;
+  color: #2563eb !important;
+}
+
+
+/* =========================================================
+   PASSWORD
+   ========================================================= */
+
+.professor-password-form {
+  margin: 17px;
+  padding-top: 17px;
+
+  border-top: 1px solid #edf1f5;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+.professor-password-heading {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #2563eb;
+}
+
+.professor-password-heading h3 {
+  margin: 0;
+
+  color: #173558;
+
+  font-size: 11px;
+}
+
+.professor-password-heading p {
+  margin: 2px 0 0;
+
+  color: #94a3b8;
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   PASSWORD FIELD
+   ========================================================= */
+
+.professor-settings-field {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.professor-settings-field label {
+  color: #536981;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.professor-settings-field > div {
+  width: 100%;
+  height: 42px;
+
+  padding: 0 11px;
+
+  border: 1px solid #ccd8e8;
+  border-radius: 9px;
+
+  background: #f8fafc;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #718399;
+}
+
+.professor-settings-field > div:focus-within {
+  border-color: #2563eb;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(37, 99, 235, 0.07);
+}
+
+.professor-settings-field input {
+  min-width: 0;
+
+  flex: 1;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #173558;
+
+  font-family: inherit;
+  font-size: 10px;
+}
+
+.professor-settings-field button {
+  width: 30px;
+  height: 30px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 7px;
+
+  background: transparent;
+  color: #718399;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.professor-settings-field button:hover {
+  background: #eef3f8;
+
+  color: #2563eb;
+}
+
+
+/* =========================================================
+   PASSWORD SAVE
+   ========================================================= */
+
+.professor-password-save {
+  width: fit-content;
+  height: 39px;
+
+  padding: 0 13px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #0f766e;
+  color: #ffffff;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 750;
+}
+
+.professor-password-save:hover {
+  background: #115e59;
+}
+
+.professor-password-save:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .professor-settings-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .professor-settings-content {
+    padding: 18px;
+  }
+
+
+  .professor-setting-row {
+    align-items: flex-start;
+  }
+
+
+  .professor-settings-account > div {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 6px;
+  }
+
+}

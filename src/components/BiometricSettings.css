@@ -1,0 +1,206 @@
+/* =========================================================
+   FINGERPRINT & FACE SIGN-IN (Settings card)
+   Matches the other cards on both Settings pages.
+   ========================================================= */
+
+.biometric-card {
+  overflow: hidden;
+
+  border: 1px solid #e3e9f2;
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.biometric-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  padding: 20px 22px;
+
+  border-bottom: 1px solid #eef2f7;
+}
+
+.biometric-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+
+  width: 52px;
+  height: 52px;
+
+  border-radius: 14px;
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.biometric-header h2 {
+  margin: 0 0 4px;
+
+  color: #15315c;
+  font-size: 18px;
+}
+
+.biometric-header p {
+  margin: 0;
+
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.biometric-body {
+  padding: 18px 22px 22px;
+}
+
+.biometric-how {
+  display: grid;
+  gap: 10px;
+
+  margin: 0 0 12px;
+  padding: 0;
+
+  list-style: none;
+}
+
+.biometric-how li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  color: #334155;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.biometric-how svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+
+  color: #2563eb;
+}
+
+.biometric-note {
+  margin: 0 0 12px;
+
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.biometric-message,
+.biometric-error {
+  margin: 0 0 12px;
+  padding: 10px 12px;
+
+  border-radius: 10px;
+
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.biometric-message {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.biometric-error {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.biometric-card h3 {
+  margin: 16px 0 8px;
+
+  color: #15315c;
+  font-size: 14px;
+}
+
+.biometric-devices {
+  display: grid;
+  gap: 8px;
+
+  margin: 0 0 14px;
+  padding: 0;
+
+  list-style: none;
+}
+
+.biometric-devices li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 10px 12px;
+
+  border: 1px solid #e3e9f2;
+  border-radius: 12px;
+
+  color: #475569;
+}
+
+.biometric-devices li > div {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.biometric-devices strong {
+  color: #15315c;
+  font-size: 14px;
+}
+
+.biometric-devices span {
+  font-size: 12px;
+}
+
+.biometric-devices button {
+  display: grid;
+  place-items: center;
+
+  width: 36px;
+  height: 36px;
+
+  border: none;
+  border-radius: 9px;
+  background: #fef2f2;
+  color: #b91c1c;
+
+  cursor: pointer;
+}
+
+.biometric-setup {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  min-height: 44px;
+  padding: 0 18px;
+
+  border: none;
+  border-radius: 12px;
+  background: #2563eb;
+  color: #ffffff;
+
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.biometric-setup:hover {
+  background: #1d4ed8;
+}
+
+.biometric-setup:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.biometric-setup:focus-visible,
+.biometric-devices button:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}

@@ -1,0 +1,1375 @@
+/* =========================================================
+   CAMPUSMATE
+   STUDENT DASHBOARD
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.dashboard-page {
+  min-height: 100vh;
+
+  background: #f5f8fc;
+  color: #173558;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   MAIN
+   Works with collapsible Sidebar.jsx
+   ========================================================= */
+
+.dashboard-main {
+  min-height: 100vh;
+
+  margin-left:
+    var(
+      --student-sidebar-width,
+      92px
+    );
+
+  width:
+    calc(
+      100% -
+      var(
+        --student-sidebar-width,
+        92px
+      )
+    );
+
+  background: #f5f8fc;
+
+  transition:
+    margin-left 0.25s ease,
+    width 0.25s ease;
+}
+
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.topbar {
+  width: 100%;
+  height: 80px;
+
+  padding: 0 34px;
+
+  border-bottom: 1px solid #e1e8f0;
+
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.search-box {
+  width: min(610px, 58%);
+  height: 44px;
+
+  padding: 0 14px;
+
+  border: 1px solid #d6e0eb;
+  border-radius: 11px;
+
+  background: #f8fafc;
+  color: #7890aa;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  transition:
+    border 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.search-box:focus-within {
+  border-color: #2563eb;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(37, 99, 235, 0.07);
+}
+
+
+.search-box input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #36516e;
+
+  font-family: inherit;
+  font-size: 12px;
+}
+
+
+.search-box input::placeholder {
+  color: #94a3b8;
+}
+
+
+/* =========================================================
+   TOP BAR RIGHT
+   ========================================================= */
+
+.topbar-right {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+}
+
+
+.profile-circle {
+  width: 41px;
+  height: 41px;
+
+  flex: 0 0 41px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #4f46e5
+    );
+
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+
+.profile-text {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+.profile-text strong {
+  max-width: 180px;
+
+  overflow: hidden;
+
+  color: #173558;
+
+  font-size: 11px;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.profile-text small {
+  max-width: 180px;
+
+  margin-top: 2px;
+
+  overflow: hidden;
+
+  color: #94a3b8;
+
+  font-size: 8px;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.dashboard-content {
+  width: 100%;
+
+  padding: 34px 38px 45px;
+}
+
+
+/* =========================================================
+   WELCOME
+   ========================================================= */
+
+.welcome-section {
+  width: 100%;
+
+  margin-bottom: 26px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+}
+
+
+.welcome-section h1 {
+  margin: 0;
+
+  color: #153453;
+
+  font-size: clamp(
+    27px,
+    2.4vw,
+    36px
+  );
+
+  font-weight: 800;
+
+  letter-spacing: -0.7px;
+}
+
+
+.welcome-section p {
+  margin: 7px 0 0;
+
+  color: #7b8ea5;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   QUOTE
+   ========================================================= */
+
+.quote {
+  min-width: 215px;
+  max-width: 260px;
+
+  padding: 15px 17px;
+
+  border: 1px solid #cfe1ff;
+  border-radius: 12px;
+
+  background: #eef6ff;
+  color: #58708d;
+
+  font-size: 10px;
+  font-style: italic;
+
+  line-height: 1.55;
+}
+
+
+.quote small {
+  margin-top: 6px;
+
+  display: block;
+
+  color: #2563eb;
+
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.stats-grid {
+  width: 100%;
+
+  margin-bottom: 22px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(0, 1fr)
+    );
+
+  gap: 15px;
+}
+
+
+/* =========================================================
+   STAT CARD
+   ========================================================= */
+
+.stat-card {
+  min-width: 0;
+  min-height: 112px;
+
+  padding: 18px;
+
+  border: 1px solid #dde5ee;
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  box-shadow:
+    0 3px 12px
+    rgba(31, 52, 78, 0.025);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.stat-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 20px
+    rgba(31, 52, 78, 0.06);
+}
+
+
+.stat-icon {
+  width: 47px;
+  height: 47px;
+
+  flex: 0 0 47px;
+
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.stat-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+
+.stat-blue .stat-icon {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+
+.stat-red .stat-icon {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+
+.stat-green .stat-icon {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+
+.stat-purple .stat-icon {
+  background: #ede9fe;
+  color: #7c3aed;
+}
+
+
+.stat-card h2 {
+  margin: 0;
+
+  color: #153453;
+
+  font-size: 24px;
+  font-weight: 800;
+
+  line-height: 1;
+}
+
+
+.stat-card p {
+  margin: 5px 0 0;
+
+  color: #36516e;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+
+.stat-card small {
+  margin-top: 4px;
+
+  display: block;
+
+  color: #95a4b5;
+
+  font-size: 8px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   MAIN GRID
+   ========================================================= */
+
+.main-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 2fr)
+    minmax(290px, 1fr);
+
+  grid-template-areas:
+    "assignments deadlines"
+    "projects deadlines"
+    "queue queue"
+    "productivity productivity"
+    "motivation motivation";
+
+  gap: 20px;
+
+  align-items: stretch;
+}
+
+
+.assignments-panel {
+  grid-area: assignments;
+}
+
+
+.projects-panel {
+  grid-area: projects;
+}
+
+
+.deadlines-panel {
+  grid-area: deadlines;
+}
+
+
+.queue-panel {
+  grid-area: queue;
+}
+
+
+.productivity-panel {
+  grid-area: productivity;
+}
+
+
+.motivation-large {
+  grid-area: motivation;
+}
+
+
+/* =========================================================
+   GENERAL CARD
+   ========================================================= */
+
+.dashboard-card {
+  min-width: 0;
+
+  overflow: hidden;
+
+  border: 1px solid #dde5ee;
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 3px 12px
+    rgba(31, 52, 78, 0.025);
+}
+
+
+/* =========================================================
+   CARD TITLE
+   ========================================================= */
+
+.card-title {
+  min-height: 58px;
+
+  padding: 14px 18px;
+
+  border-bottom: 1px solid #edf1f5;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+
+.card-title > div {
+  min-width: 0;
+}
+
+
+.card-title h3 {
+  margin: 0;
+
+  color: #173558;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  font-size: 13px;
+  font-weight: 750;
+}
+
+
+.card-title h3 svg {
+  color: #173558;
+}
+
+
+.card-title small {
+  margin-top: 4px;
+
+  display: block;
+
+  color: #94a3b8;
+
+  font-size: 8px;
+}
+
+
+.card-title a {
+  flex-shrink: 0;
+
+  color: #2563eb;
+
+  text-decoration: none;
+
+  font-size: 9px;
+  font-weight: 750;
+}
+
+
+.card-title a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   EMPTY DASHBOARD
+   ========================================================= */
+
+.empty-dashboard {
+  min-height: 205px;
+
+  padding: 25px;
+
+  color: #9baabd;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+
+.empty-dashboard svg {
+  color: #9aaabd;
+}
+
+
+.empty-dashboard h2,
+.empty-dashboard h3 {
+  margin: 9px 0 4px;
+
+  color: #536981;
+}
+
+
+.empty-dashboard h2 {
+  font-size: 19px;
+}
+
+
+.empty-dashboard h3 {
+  font-size: 13px;
+}
+
+
+.empty-dashboard p {
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 9px;
+
+  line-height: 1.5;
+}
+
+
+.small-link-button {
+  margin-top: 11px;
+
+  padding: 8px 12px;
+
+  border-radius: 8px;
+
+  background: #2563eb;
+  color: #ffffff !important;
+
+  text-decoration: none !important;
+
+  font-size: 8px !important;
+  font-weight: 700;
+}
+
+
+.small-link-button:hover {
+  background: #1d4ed8;
+}
+
+
+/* =========================================================
+   ASSIGNMENT TABLE
+   ========================================================= */
+
+.table-scroll {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+
+.dashboard-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  table-layout: auto;
+}
+
+
+.dashboard-table th {
+  padding: 11px 14px;
+
+  background: #f8fafc;
+  color: #8191a5;
+
+  font-size: 8px;
+  font-weight: 750;
+
+  text-align: left;
+}
+
+
+.dashboard-table td {
+  padding: 12px 14px;
+
+  border-top: 1px solid #edf1f5;
+
+  color: #5d7189;
+
+  font-size: 9px;
+
+  vertical-align: middle;
+}
+
+
+.dashboard-table tbody tr:hover {
+  background: #fbfdff;
+}
+
+
+/* =========================================================
+   DIFFICULTY BADGES
+   ========================================================= */
+
+.difficulty {
+  padding: 5px 7px;
+
+  border-radius: 999px;
+
+  font-size: 7px;
+  font-weight: 800;
+
+  text-transform: capitalize;
+}
+
+
+.difficulty.easy {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+
+.difficulty.medium {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+
+.difficulty.hard {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+.progress-number {
+  color: #36516e;
+
+  font-size: 8px;
+}
+
+
+.progress-background {
+  width: 100%;
+  height: 5px;
+
+  margin-top: 5px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: #e3eaf2;
+}
+
+
+.progress-fill,
+.project-progress-fill {
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: #2563eb;
+
+  transition:
+    width 0.25s ease;
+}
+
+
+/* =========================================================
+   RISK
+   ========================================================= */
+
+.risk {
+  display: inline-flex;
+
+  padding: 5px 7px;
+
+  border-radius: 999px;
+
+  font-size: 7px;
+  font-weight: 800;
+}
+
+
+.risk.low {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+
+.risk.medium {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+
+.risk.high {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+
+/* =========================================================
+   PROJECTS
+   ========================================================= */
+
+.dashboard-project-list {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.dashboard-project-row {
+  min-height: 69px;
+
+  padding: 11px 16px;
+
+  border-bottom: 1px solid #edf1f5;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(140px, 1.3fr)
+    minmax(120px, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+
+.dashboard-project-row:last-child {
+  border-bottom: none;
+}
+
+
+.dashboard-project-info {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+.dashboard-project-info strong {
+  overflow: hidden;
+
+  color: #36516e;
+
+  font-size: 9px;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.dashboard-project-info small {
+  margin-top: 3px;
+
+  color: #94a3b8;
+
+  font-size: 7px;
+}
+
+
+.dashboard-project-progress {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+.dashboard-project-progress .progress-background {
+  margin: 0;
+
+  flex: 1;
+}
+
+
+.dashboard-project-progress small {
+  width: 30px;
+
+  color: #718399;
+
+  font-size: 7px;
+}
+
+
+.dashboard-project-status {
+  padding: 5px 7px;
+
+  border-radius: 999px;
+
+  font-size: 7px;
+  font-weight: 800;
+}
+
+
+.project-track {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+
+.project-completed {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+
+.project-risk {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+
+/* =========================================================
+   DEADLINES
+   ========================================================= */
+
+.deadlines-panel {
+  min-height: 100%;
+}
+
+
+.deadline-list {
+  padding: 8px 16px 16px;
+}
+
+
+.deadline-row {
+  padding: 12px 0;
+
+  border-bottom: 1px solid #edf1f5;
+}
+
+
+.deadline-row:last-child {
+  border-bottom: none;
+}
+
+
+.deadline-row > span {
+  color: #2563eb;
+
+  font-size: 8px;
+  font-weight: 750;
+}
+
+
+.deadline-row p {
+  margin: 5px 0 7px;
+
+  color: #536981;
+
+  font-size: 9px;
+  font-weight: 650;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   QUEUE SECTION
+   ========================================================= */
+
+.queue-panel {
+  min-width: 0;
+}
+
+
+.queue-grid {
+  padding: 17px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(0, 1fr)
+    );
+
+  gap: 12px;
+}
+
+
+.queue-card {
+  min-width: 0;
+
+  padding: 14px;
+
+  border: 1px solid #e1e8f0;
+  border-radius: 11px;
+
+  background: #f9fbfd;
+}
+
+
+.queue-name {
+  color: #36516e;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+}
+
+
+.queue-name svg {
+  color: #2563eb;
+}
+
+
+.queue-name strong {
+  font-size: 9px;
+}
+
+
+.queue-card h2 {
+  margin: 13px 0 3px;
+
+  color: #173558;
+
+  font-size: 18px;
+}
+
+
+.queue-card p {
+  min-height: 14px;
+
+  margin: 0 0 9px;
+
+  color: #94a3b8;
+
+  font-size: 7px;
+}
+
+
+/* =========================================================
+   PRODUCTIVITY
+   ========================================================= */
+
+.chart-container {
+  width: 100%;
+
+  padding: 18px 18px 10px;
+}
+
+
+/* =========================================================
+   MOTIVATION
+   ========================================================= */
+
+.motivation-large {
+  min-height: 135px;
+
+  padding: 22px 26px;
+
+  overflow: hidden;
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #12355b 0%,
+      #20558e 100%
+    );
+
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+
+.motivation-large h2 {
+  max-width: 570px;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 18px;
+
+  line-height: 1.4;
+}
+
+
+.motivation-large a {
+  text-decoration: none;
+}
+
+
+.motivation-large button {
+  height: 37px;
+
+  margin-top: 14px;
+  padding: 0 13px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #17406b;
+
+  cursor: pointer;
+
+  font-family: inherit;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+
+.motivation-large button:hover {
+  background: #edf5ff;
+}
+
+
+.mountain {
+  font-size: 68px;
+
+  opacity: 0.85;
+}
+
+
+/* =========================================================
+   NOTIFICATION BELL FALLBACK
+   ========================================================= */
+
+.topbar .bell-wrapper {
+  position: relative;
+
+  width: 40px;
+  height: 40px;
+
+  padding: 0;
+
+  border: 1px solid #dce5ef;
+  border-radius: 10px;
+
+  background: #ffffff;
+  color: #536981;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.topbar .bell-wrapper:hover {
+  border-color: #2563eb;
+
+  color: #2563eb;
+}
+
+
+.topbar .bell-wrapper > span {
+  position: absolute;
+
+  top: -5px;
+  right: -5px;
+
+  min-width: 17px;
+  height: 17px;
+
+  padding: 0 4px;
+
+  border: 2px solid #ffffff;
+  border-radius: 999px;
+
+  background: #ef4444;
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 7px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1250px) {
+
+  .stats-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+
+  .queue-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+}
+
+
+@media (max-width: 1050px) {
+
+  .main-grid {
+    grid-template-columns: 1fr;
+
+    grid-template-areas:
+      "assignments"
+      "deadlines"
+      "projects"
+      "queue"
+      "productivity"
+      "motivation";
+  }
+
+
+  .deadlines-panel {
+    min-height: auto;
+  }
+
+}
+
+
+@media (max-width: 900px) {
+
+  .dashboard-content {
+    padding:
+      26px 22px 35px;
+  }
+
+
+  .topbar {
+    padding:
+      0 22px;
+  }
+
+
+  .search-box {
+    width: min(
+      480px,
+      62%
+    );
+  }
+
+
+  .welcome-section {
+    align-items: flex-start;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .topbar {
+    height: auto;
+    min-height: 72px;
+
+    padding:
+      12px 16px;
+  }
+
+
+  .search-box {
+    width: 100%;
+    max-width: 350px;
+  }
+
+
+  .profile-text {
+    display: none;
+  }
+
+
+  .dashboard-content {
+    padding:
+      20px 16px 30px;
+  }
+
+
+  .welcome-section {
+    flex-direction: column;
+
+    gap: 14px;
+  }
+
+
+  .quote {
+    width: 100%;
+    max-width: none;
+  }
+
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .queue-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .dashboard-project-row {
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+  }
+
+
+  .dashboard-project-status {
+    width: fit-content;
+  }
+
+
+  .motivation-large {
+    align-items: flex-start;
+  }
+
+
+  .mountain {
+    display: none;
+  }
+
+}
+
+/* Three stat boxes: active, need attention, to do */
+.stats-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 760px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

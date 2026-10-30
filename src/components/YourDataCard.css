@@ -1,0 +1,133 @@
+.data-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.data-delete-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  min-height: 44px;
+  padding: 0 14px;
+
+  border: 1px solid #fecaca;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #b91c1c;
+
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.data-delete-box {
+  display: grid;
+  gap: 12px;
+
+  margin-top: 14px;
+  padding: 14px;
+
+  border: 1px solid #fecaca;
+  border-radius: 12px;
+  background: #fff7f7;
+
+  color: #334155;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.data-delete-box p {
+  margin: 0 0 4px;
+}
+
+.data-delete-box form {
+  display: grid;
+  gap: 12px;
+}
+
+.data-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-width: 360px;
+}
+
+.data-field span {
+  color: #15315c;
+  font-weight: 600;
+}
+
+.data-field input {
+  min-height: 42px;
+  padding: 8px 11px;
+
+  border: 1px solid #cfd9e7;
+  border-radius: 10px;
+  background: #ffffff;
+
+  font: inherit;
+}
+
+.data-danger,
+.data-cancel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  min-height: 42px;
+  padding: 0 16px;
+
+  border-radius: 10px;
+
+  font: inherit;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.data-danger {
+  border: 1px solid #dc2626;
+  background: #dc2626;
+  color: #ffffff;
+}
+
+.data-cancel {
+  border: 1px solid #cfd9e7;
+  background: #ffffff;
+  color: #15315c;
+}
+
+.data-danger:disabled,
+.data-delete-link:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.data-delete-link:focus-visible,
+.data-danger:focus-visible,
+.data-cancel:focus-visible,
+.data-field input:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* Email notifications card */
+.email-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.email-toggle input {
+  width: 18px;
+  height: 18px;
+}

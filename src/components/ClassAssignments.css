@@ -1,0 +1,237 @@
+/* =========================================================
+   CLASS ASSIGNMENTS (student view)
+   Matches the cards on the Assignments page.
+   ========================================================= */
+
+.class-assignments {
+  margin-bottom: 20px;
+  overflow: hidden;
+
+  border: 1px solid #e3e9f2;
+  border-radius: 14px;
+  background: #ffffff;
+}
+
+.class-assignments-header {
+  min-height: 55px;
+  padding: 15px 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #e7edf4;
+}
+
+.class-assignments-header h2 {
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #15315c;
+  font-size: 17px;
+}
+
+.class-assignments-count {
+  min-width: 26px;
+  padding: 2px 9px;
+
+  border-radius: 999px;
+  background: #eaf2ff;
+  color: #1d5fd1;
+
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.class-assignments-message {
+  margin: 0;
+  padding: 22px 18px;
+
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.class-assignments-message.error {
+  color: #c0262d;
+}
+
+.class-assignments-list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.class-assignment {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+
+  padding: 14px 18px;
+
+  border-bottom: 1px solid #eef2f7;
+  border-left: 4px solid transparent;
+}
+
+.class-assignment:last-child {
+  border-bottom: none;
+}
+
+.class-assignment.soon {
+  border-left-color: #f59e0b;
+}
+
+.class-assignment.upcoming {
+  border-left-color: #3b82f6;
+}
+
+.class-assignment.late {
+  border-left-color: #dc2626;
+  background: #fffafa;
+}
+
+.class-assignment-main {
+  min-width: 0;
+}
+
+.class-assignment-main h3 {
+  margin: 0 0 4px;
+
+  color: #15315c;
+  font-size: 15px;
+}
+
+.class-assignment-class {
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  color: #64748b;
+  font-size: 13px;
+}
+
+.class-assignment-description {
+  margin: 6px 0 0;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  color: #475569;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.class-assignment-side {
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+
+  text-align: right;
+}
+
+.class-assignment-badge {
+  padding: 3px 10px;
+
+  border-radius: 999px;
+  background: #f1f5f9;
+  color: #475569;
+
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.class-assignment-badge.soon {
+  background: #fff4dc;
+  color: #a15c00;
+}
+
+.class-assignment-badge.upcoming {
+  background: #eaf2ff;
+  color: #1d5fd1;
+}
+
+.class-assignment-badge.late {
+  background: #fde8e8;
+  color: #b91c1c;
+}
+
+.class-assignment-date,
+.class-assignment-points {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  color: #64748b;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+
+/* Phones: stack the date/status under the title */
+@media (max-width: 640px) {
+  .class-assignment {
+    flex-direction: column;
+  }
+
+  .class-assignment-side {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: left;
+  }
+}
+
+
+/* Open the class to hand in */
+.class-assignments-hint {
+  flex-basis: 100%;
+  margin: 2px 0 0;
+
+  color: #64748b;
+  font-size: 13px;
+}
+
+.class-assignments-header {
+  flex-wrap: wrap;
+}
+
+.class-assignment-open {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  margin-top: 4px;
+  padding: 5px 10px;
+
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+
+  font-size: 12.5px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.class-assignment-open:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.class-assignment-badge.done {
+  background: #dcfce7;
+  color: #166534;
+}

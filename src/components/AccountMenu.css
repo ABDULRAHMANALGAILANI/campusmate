@@ -1,0 +1,237 @@
+/* =========================================================
+   ACCOUNT MENU (opens from the avatar in the top bar)
+   ========================================================= */
+
+header[class*="topbar"] [data-account-trigger] {
+  cursor: pointer;
+  border-radius: 999px;
+}
+
+header[class*="topbar"] [data-account-trigger]:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 3px;
+}
+
+.account-menu {
+  position: fixed;
+  z-index: 1200;
+
+  width: 260px;
+  padding: 8px;
+  box-sizing: border-box;
+
+  border: 1px solid #e3e9f2;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.16);
+
+  animation: account-menu-in 0.15s ease-out;
+}
+
+@keyframes account-menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .account-menu {
+    animation: none;
+  }
+}
+
+.account-menu-header {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  margin-bottom: 6px;
+  padding: 8px 12px 12px;
+
+  border-bottom: 1px solid #eef2f7;
+}
+
+.account-menu-header strong {
+  color: #15315c;
+  font-size: 14px;
+}
+
+.account-menu-header span {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.account-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  width: 100%;
+  min-height: 44px;
+  padding: 0 12px;
+  box-sizing: border-box;
+
+  border: none;
+  border-radius: 8px;
+  background: none;
+  color: #1e293b;
+
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+.account-menu-item:hover,
+.account-menu-item:focus-visible {
+  background: #f1f5f9;
+  outline: none;
+}
+
+.account-menu-item.logout {
+  color: #b91c1c;
+}
+
+.account-menu-divider {
+  height: 1px;
+  margin: 6px 4px;
+
+  background: #eef2f7;
+}
+
+
+/* ---------- Down arrow next to the name/photo ---------- */
+
+.account-chevron {
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+
+  width: 26px;
+  height: 26px;
+  margin-left: -4px;
+
+  border-radius: 50%;
+  color: #475569;
+
+  transition: background 0.15s ease;
+}
+
+header[class*="topbar"] [data-account-trigger]:hover ~ .account-chevron,
+.account-chevron:hover {
+  background: #eef2f7;
+}
+
+/* Phones use the "More" menu instead */
+@media (max-width: 768px) {
+  .account-chevron {
+    display: none;
+  }
+}
+
+
+/* ---------- One-time tip ---------- */
+
+.account-tip {
+  position: fixed;
+  z-index: 1150;
+
+  width: 260px;
+  padding: 14px 16px;
+  box-sizing: border-box;
+
+  border-radius: 14px;
+  background: #102a43;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.25);
+  color: #e2e8f0;
+
+  animation: account-menu-in 0.2s ease-out;
+}
+
+/* little arrow pointing up at the avatar */
+.account-tip::before {
+  position: absolute;
+  top: -6px;
+  right: 14px;
+
+  width: 12px;
+  height: 12px;
+
+  background: #102a43;
+  transform: rotate(45deg);
+
+  content: "";
+}
+
+.account-tip strong {
+  display: block;
+  margin: 0 24px 4px 0;
+
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.account-tip p {
+  margin: 0 0 12px;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.account-tip-ok {
+  min-height: 34px;
+  padding: 0 14px;
+
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.account-tip-ok:hover {
+  background: #1d4ed8;
+}
+
+.account-tip-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  display: grid;
+  place-items: center;
+
+  width: 28px;
+  height: 28px;
+
+  border: none;
+  border-radius: 6px;
+  background: none;
+  color: #cbd5e1;
+
+  cursor: pointer;
+}
+
+.account-tip-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.account-tip-ok:focus-visible,
+.account-tip-close:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
+}
