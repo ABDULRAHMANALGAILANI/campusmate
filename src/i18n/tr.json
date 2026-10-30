@@ -1307,5 +1307,15 @@
 "You can still set both up here: this computer's camera checks your face (blink 2 times), then you confirm on your phone by scanning a QR code. When Windows asks, choose \"iPhone, iPad, or Android device\". Keep Bluetooth on for both.": "Yine de ikisini de burada ayarlayabilirsiniz: bu bilgisayarın kamerası yüzünüzü kontrol eder (2 kez göz kırpın), ardından QR kodu tarayarak telefonunuzda onaylarsınız. Windows sorduğunda \"iPhone, iPad, or Android device\" seçeneğini seçin. İkisinde de Bluetooth açık olsun.",
 "Your phone already has CampusMate sign-in. You can use it on this computer now: on the sign-in page click Fingerprint or Face and choose \"iPhone, iPad, or Android device\".": "Telefonunuzda CampusMate girişi zaten var. Bu bilgisayarda hemen kullanabilirsiniz: giriş sayfasında Parmak izi veya Yüz'e tıklayıp \"iPhone, iPad, or Android device\" seçeneğini seçin.",
 "Scan a QR code and confirm with your phone's fingerprint.": "Bir QR kodu tarayın ve telefonunuzun parmak iziyle onaylayın.",
-"Blink 2 times at this computer's camera, then confirm on your phone.": "Bu bilgisayarın kamerasına 2 kez göz kırpın, ardından telefonunuzda onaylayın."
+"Blink 2 times at this computer's camera, then confirm on your phone.": "Bu bilgisayarın kamerasına 2 kez göz kırpın, ardından telefonunuzda onaylayın.",
+"Check again": "Tekrar kontrol et",
+"Come back here and press Check again.": "Buraya dönün ve Tekrar kontrol et'e basın.",
+"Face sign-in on a computer uses Windows Hello to confirm it's you. Any Windows computer can use it, even without a face camera:": "Bilgisayarda yüzle giriş, siz olduğunuzu doğrulamak için Windows Hello'yu kullanır. Yüz kamerası olmasa bile her Windows bilgisayarı kullanabilir:",
+"Fingerprint sign-in is set up on your phone.": "Parmak iziyle giriş telefonunuzda ayarlanır.",
+"On your phone, go to Settings and press Set up fingerprint or Set up face (one or both). On a computer, press Set up face: you blink at the camera, then Windows Hello confirms (face or PIN). Do this once on each device.": "Telefonunuzda Ayarlar'a gidin ve Parmak izini ayarla veya Yüzü ayarla'ya basın (birini veya ikisini). Bilgisayarda Yüzü ayarla'ya basın: kameraya göz kırparsınız, ardından Windows Hello onaylar (yüz veya PIN). Bunu her cihazda bir kez yapın.",
+"Open Windows Settings → Accounts → Sign-in options.": "Windows Ayarlar → Hesaplar → Oturum açma seçenekleri'ni açın.",
+"Set up Facial recognition (Windows Hello) if you have it, or PIN (Windows Hello).": "Varsa Yüz tanıma (Windows Hello), yoksa PIN (Windows Hello) ayarlayın.",
+"Turn on Windows Hello first.": "Önce Windows Hello'yu açın.",
+"Blink 2 times at this computer's camera, then confirm with Windows Hello (face or PIN).": "Bu bilgisayarın kamerasına 2 kez göz kırpın, ardından Windows Hello ile onaylayın (yüz veya PIN).",
+"Blink 2 times at this computer's camera, then confirm with Touch ID or your Mac password.": "Bu bilgisayarın kamerasına 2 kez göz kırpın, ardından Touch ID veya Mac şifrenizle onaylayın."
 }

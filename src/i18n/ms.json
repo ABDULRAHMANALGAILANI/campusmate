@@ -1303,5 +1303,15 @@
 "You can still set both up here: this computer's camera checks your face (blink 2 times), then you confirm on your phone by scanning a QR code. When Windows asks, choose \"iPhone, iPad, or Android device\". Keep Bluetooth on for both.": "Anda masih boleh sediakan kedua-duanya di sini: kamera komputer ini memeriksa muka anda (kelip mata 2 kali), kemudian anda sahkan pada telefon dengan mengimbas kod QR. Apabila Windows bertanya, pilih \"iPhone, iPad, or Android device\". Pastikan Bluetooth hidup pada kedua-duanya.",
 "Your phone already has CampusMate sign-in. You can use it on this computer now: on the sign-in page click Fingerprint or Face and choose \"iPhone, iPad, or Android device\".": "Telefon anda sudah ada log masuk CampusMate. Anda boleh menggunakannya pada komputer ini sekarang: di halaman log masuk klik Cap jari atau Muka dan pilih \"iPhone, iPad, or Android device\".",
 "Scan a QR code and confirm with your phone's fingerprint.": "Imbas kod QR dan sahkan dengan cap jari telefon anda.",
-"Blink 2 times at this computer's camera, then confirm on your phone.": "Kelip mata 2 kali ke arah kamera komputer ini, kemudian sahkan pada telefon anda."
+"Blink 2 times at this computer's camera, then confirm on your phone.": "Kelip mata 2 kali ke arah kamera komputer ini, kemudian sahkan pada telefon anda.",
+"Check again": "Semak semula",
+"Come back here and press Check again.": "Kembali ke sini dan tekan Semak semula.",
+"Face sign-in on a computer uses Windows Hello to confirm it's you. Any Windows computer can use it, even without a face camera:": "Log masuk muka pada komputer menggunakan Windows Hello untuk mengesahkan anda. Mana-mana komputer Windows boleh menggunakannya, walaupun tanpa kamera muka:",
+"Fingerprint sign-in is set up on your phone.": "Log masuk cap jari disediakan pada telefon anda.",
+"On your phone, go to Settings and press Set up fingerprint or Set up face (one or both). On a computer, press Set up face: you blink at the camera, then Windows Hello confirms (face or PIN). Do this once on each device.": "Pada telefon anda, pergi ke Tetapan dan tekan Sediakan cap jari atau Sediakan muka (satu atau kedua-duanya). Pada komputer, tekan Sediakan muka: anda berkelip ke arah kamera, kemudian Windows Hello mengesahkan (muka atau PIN). Lakukan sekali pada setiap peranti.",
+"Open Windows Settings → Accounts → Sign-in options.": "Buka Windows Settings → Accounts → Sign-in options.",
+"Set up Facial recognition (Windows Hello) if you have it, or PIN (Windows Hello).": "Sediakan Facial recognition (Windows Hello) jika ada, atau PIN (Windows Hello).",
+"Turn on Windows Hello first.": "Hidupkan Windows Hello dahulu.",
+"Blink 2 times at this computer's camera, then confirm with Windows Hello (face or PIN).": "Kelip mata 2 kali ke arah kamera komputer ini, kemudian sahkan dengan Windows Hello (muka atau PIN).",
+"Blink 2 times at this computer's camera, then confirm with Touch ID or your Mac password.": "Kelip mata 2 kali ke arah kamera komputer ini, kemudian sahkan dengan Touch ID atau kata laluan Mac anda."
 }

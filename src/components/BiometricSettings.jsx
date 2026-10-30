@@ -118,13 +118,14 @@ function BiometricSettings() {
   }, [supported, loadDevices]);
 
 
-  // A computer without fingerprint/face hardware: the webcam does the
-  // blink check and the person confirms on their phone (QR code).
-  const viaPhone =
-    hasReader === false && !isPhone();
+  // Phones: fingerprint and face. Computers: face only (webcam
+  // blink check, then the computer's own Windows Hello confirms:
+  // face camera or PIN). Fingerprint is for phones.
+  const computer =
+    !isPhone();
 
   const setupLabel =
-    viaPhone ? "This computer (confirm on phone)" : deviceName();
+    deviceName();
 
   const thisDevice =
     devices.find((device) => device.id === localId) || null;
@@ -163,12 +164,6 @@ function BiometricSettings() {
           // obvious match.
           const sameName = devices.filter((device) => deviceLabel(device) === setupLabel);
           const alreadyThere = /already|exists|InvalidState/i.test(`${error.name} ${error.message}`);
-
-          if (alreadyThere && viaPhone && sameName.length !== 1) {
-            throw new Error(
-              "Your phone already has CampusMate sign-in. You can use it on this computer now: on the sign-in page click Fingerprint or Face and choose \"iPhone, iPad, or Android device\"."
-            );
-          }
 
           if (alreadyThere && sameName.length === 1) {
             rememberThisDevice(sameName[0].id);
@@ -328,13 +323,35 @@ function BiometricSettings() {
             {message && <p className="biometric-message" role="status">{message}</p>}
             {errorMessage && <p className="biometric-error" role="alert">{errorMessage}</p>}
 
-            {hasReader === false && isPhone() ? (
+            {hasReader === false ? (
               <div className="biometric-noreader">
                 <Laptop size={20} aria-hidden="true" />
-                <div>
-                  <strong>This device has no fingerprint or face unlock turned on.</strong>
-                  <p>Turn on a screen lock with fingerprint or face in your phone's settings, then come back here.</p>
-                </div>
+                {computer ? (
+                  <div>
+                    <strong>Turn on Windows Hello first.</strong>
+                    <p>
+                      Face sign-in on a computer uses Windows Hello to confirm it's you. Any Windows computer
+                      can use it, even without a face camera:
+                    </p>
+                    <ol>
+                      <li>Open Windows Settings → Accounts → Sign-in options.</li>
+                      <li>Set up Facial recognition (Windows Hello) if you have it, or PIN (Windows Hello).</li>
+                      <li>Come back here and press Check again.</li>
+                    </ol>
+                    <button
+                      type="button"
+                      className="biometric-off"
+                      onClick={() => deviceHasBiometrics().then(setHasReader)}
+                    >
+                      Check again
+                    </button>
+                  </div>
+                ) : (
+                  <div>
+                    <strong>This device has no fingerprint or face unlock turned on.</strong>
+                    <p>Turn on a screen lock with fingerprint or face in your phone's settings, then come back here.</p>
+                  </div>
+                )}
               </div>
             ) : blinking ? (
               <div className="biometric-blink">
@@ -350,44 +367,27 @@ function BiometricSettings() {
                 />
               </div>
             ) : (
-              <>
-                {viaPhone && (
-                  <div className="biometric-noreader">
-                    <Laptop size={20} aria-hidden="true" />
-                    <div>
-                      <strong>This computer has no fingerprint reader or face unlock.</strong>
-                      <p>
-                        You can still set both up here: this computer's camera checks your face (blink 2 times),
-                        then you confirm on your phone by scanning a QR code. When Windows asks, choose
-                        "iPhone, iPad, or Android device". Keep Bluetooth on for both.
-                      </p>
-                      <p className="biometric-note">
-                        Have Windows Hello? Turn it on in Windows Settings → Accounts → Sign-in options, and
-                        this computer can confirm by itself.
-                      </p>
-                    </div>
-                  </div>
+              <div className="biometric-options">
+                {!computer && renderOption(
+                  "fingerprint",
+                  Fingerprint,
+                  "Fingerprint",
+                  "Touch your fingerprint reader when asked."
                 )}
-
-                <div className="biometric-options">
-                  {renderOption(
-                    "fingerprint",
-                    Fingerprint,
-                    "Fingerprint",
-                    viaPhone
-                      ? "Scan a QR code and confirm with your phone's fingerprint."
-                      : "Touch your fingerprint reader when asked."
-                  )}
-                  {renderOption(
-                    "face",
-                    ScanFace,
-                    "Face",
-                    viaPhone
-                      ? "Blink 2 times at this computer's camera, then confirm on your phone."
-                      : "Blink 2 times at the camera, then confirm with your face unlock."
-                  )}
-                </div>
-              </>
+                {renderOption(
+                  "face",
+                  ScanFace,
+                  "Face",
+                  computer
+                    ? (/Mac/i.test(navigator.userAgent)
+                      ? "Blink 2 times at this computer's camera, then confirm with Touch ID or your Mac password."
+                      : "Blink 2 times at this computer's camera, then confirm with Windows Hello (face or PIN).")
+                    : "Blink 2 times at the camera, then confirm with your face unlock."
+                )}
+                {computer && (
+                  <p className="biometric-note">Fingerprint sign-in is set up on your phone.</p>
+                )}
+              </div>
             )}
 
             <p className="biometric-note">

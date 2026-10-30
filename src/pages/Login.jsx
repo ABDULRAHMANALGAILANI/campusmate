@@ -80,8 +80,8 @@ function Login() {
     setErrorMessage,
   ] = useState("");
 
-  // false = no fingerprint reader / face unlock on this device
-  // (e.g. a laptop): show how to use a phone instead
+  // false = no fingerprint reader / face unlock / Windows Hello
+  // on this device: the Face / Fingerprint buttons are hidden
   const [
     hasReader,
     setHasReader,
@@ -90,6 +90,10 @@ function Login() {
   useEffect(() => {
     deviceHasBiometrics().then(setHasReader);
   }, []);
+
+  // Fingerprint sign-in is for phones; computers use Face
+  const onPhone =
+    /iPhone|iPad|Android/i.test(navigator.userAgent);
 
 
   // Already signed in? Skip the sign-in page and go straight
@@ -342,13 +346,14 @@ function Login() {
                 </button>
               </div>
 
-              {biometricSupported() && (
+              {biometricSupported() && (onPhone || hasReader) && (
                 <>
                   <div className="signin-divider">
                     <span>or sign in with</span>
                   </div>
 
-                  <div className="signin-biometric">
+                  <div className={`signin-biometric ${onPhone ? "" : "single"}`}>
+                    {onPhone && (
                     <button
                       type="button"
                       className="signin-biometric-button"
@@ -363,6 +368,7 @@ function Login() {
                       />
                       Fingerprint
                     </button>
+                    )}
 
                     <button
                       type="button"
@@ -378,12 +384,6 @@ function Login() {
                     </button>
                   </div>
 
-                  {!hasReader && (
-                    <p className="signin-biometric-hint">
-                      No fingerprint reader or face unlock on this computer? Click Fingerprint or Face,
-                      choose "iPhone, iPad, or Android device", then scan the QR code with your phone.
-                    </p>
-                  )}
                 </>
               )}
             </form>

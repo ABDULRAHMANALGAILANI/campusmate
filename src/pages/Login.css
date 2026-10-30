@@ -575,3 +575,7 @@
   font-size: 13px;
   line-height: 1.5;
 }
+
+.signin-biometric.single {
+  grid-template-columns: minmax(0, 1fr);
+}

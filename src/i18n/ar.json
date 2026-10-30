@@ -1309,5 +1309,15 @@
 "You can still set both up here: this computer's camera checks your face (blink 2 times), then you confirm on your phone by scanning a QR code. When Windows asks, choose \"iPhone, iPad, or Android device\". Keep Bluetooth on for both.": "لا يزال بإمكانك إعداد الاثنين هنا: كاميرا هذا الحاسوب تتحقق من وجهك (ارمش مرتين)، ثم تؤكد على هاتفك بمسح رمز QR. عندما يسأل Windows اختر \"iPhone, iPad, or Android device\". أبقِ البلوتوث مفعّلًا على الجهازين.",
 "Your phone already has CampusMate sign-in. You can use it on this computer now: on the sign-in page click Fingerprint or Face and choose \"iPhone, iPad, or Android device\".": "هاتفك مُعدّ بالفعل لتسجيل الدخول إلى CampusMate. يمكنك استخدامه على هذا الحاسوب الآن: في صفحة تسجيل الدخول اضغط البصمة أو الوجه واختر \"iPhone, iPad, or Android device\".",
 "Scan a QR code and confirm with your phone's fingerprint.": "امسح رمز QR وأكّد ببصمة هاتفك.",
-"Blink 2 times at this computer's camera, then confirm on your phone.": "ارمش مرتين أمام كاميرا هذا الحاسوب، ثم أكّد على هاتفك."
+"Blink 2 times at this computer's camera, then confirm on your phone.": "ارمش مرتين أمام كاميرا هذا الحاسوب، ثم أكّد على هاتفك.",
+"Check again": "تحقّق مرة أخرى",
+"Come back here and press Check again.": "عد إلى هنا واضغط تحقّق مرة أخرى.",
+"Face sign-in on a computer uses Windows Hello to confirm it's you. Any Windows computer can use it, even without a face camera:": "يستخدم تسجيل الدخول بالوجه على الحاسوب Windows Hello للتأكد من هويتك. يمكن لأي حاسوب Windows استخدامه حتى دون كاميرا وجه:",
+"Fingerprint sign-in is set up on your phone.": "يتم إعداد تسجيل الدخول بالبصمة على هاتفك.",
+"On your phone, go to Settings and press Set up fingerprint or Set up face (one or both). On a computer, press Set up face: you blink at the camera, then Windows Hello confirms (face or PIN). Do this once on each device.": "على هاتفك، اذهب إلى الإعدادات واضغط إعداد البصمة أو إعداد الوجه (واحد أو الاثنين). على الحاسوب، اضغط إعداد الوجه: ترمش أمام الكاميرا ثم يؤكد Windows Hello (بالوجه أو PIN). افعل ذلك مرة واحدة على كل جهاز.",
+"Open Windows Settings → Accounts → Sign-in options.": "افتح إعدادات Windows ← الحسابات ← خيارات تسجيل الدخول.",
+"Set up Facial recognition (Windows Hello) if you have it, or PIN (Windows Hello).": "فعّل التعرّف على الوجه (Windows Hello) إن وُجد، أو PIN (Windows Hello).",
+"Turn on Windows Hello first.": "فعّل Windows Hello أولًا.",
+"Blink 2 times at this computer's camera, then confirm with Windows Hello (face or PIN).": "ارمش مرتين أمام كاميرا هذا الحاسوب، ثم أكّد باستخدام Windows Hello (الوجه أو PIN).",
+"Blink 2 times at this computer's camera, then confirm with Touch ID or your Mac password.": "ارمش مرتين أمام كاميرا هذا الحاسوب، ثم أكّد باستخدام Touch ID أو كلمة مرور Mac."
 }
